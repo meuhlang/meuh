@@ -7,21 +7,85 @@
 </head>
 <body>
 <h1>The meuh programming language</h1>
-<div>
-A simple and not frustrating programming language.
+<h2>Introduction</h2>
+<div>The goal of this project is to implement a programming language which can permit any
+  programmer to work easier without ruminating bad injury about used language.</div>
+<div>On the second hand, this can be a hobby for a time.</div>
 
-Some feature :
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">Garbage
-    Collector</a></li>
-  <li>Thread multiplexing like
-     <a href="https://golang.org/doc/effective_go.html#goroutines">goroutine</a> with the
-     <a href="https://llvm.org/docs/Coroutines.html">LLVM coroutine</a> functionality
-  </li>
-  <li><a href="https://en.wikipedia.org/wiki/Anonymous_function">Anonymous functions</a>
-    also called as Lambda</li>
-</ul>
+<h2>Kind of language</h2>
+<div>The language adopts the philosophy of
+  <a href="https://en.wikipedia.org/wiki/Write_once,_compile_anywhere">write once, compile
+    anywhere</a> and <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>.</div>
+<div>It is a general purpose <a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing
+  Complete</a> language with a least those paradigms :
+  <ul>
+    <li>Imperative</li>
+    <li>Object-Oriented</li>
+    <li>Procedural</li>
+    <li>Concurrent</li>
+    <li>Generic Programming</li>
+    <li>Reflection</li>
+  </ul>
 </div>
+<div>The next features will also be implemented :
+  <ul>
+    <li>Thread multiplexing with
+      <a href="http://llvm.org/docs/Coroutines.html">LLVM coroutines</a> like in go with the
+      <a href="https://golang.org/doc/effective_go.html#goroutines">goroutine</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Anonymous_function">Anonymous functions</a> also
+      called as Lambda expressions</li>
+    <li>... to be continued</li>
+  </ul>
+</div>
+
+<h2>The toolchain</h2>
+<div>The compiler <a href="https://en.wikipedia.org/wiki/Compiler#Front_end">front-end</a> will be
+  part of this project, and for the
+  <a href="https://en.wikipedia.org/wiki/Compiler#Back_end">back-end</a>
+  <a href="http://www.llvm.org">LLVM</a> will be used.
+</div>
+
+<div>
+  Compilation phases per compilation unit :
+  <dl>
+    <dt>1. Lexical Analyzer</dt>
+    <dd>Produce tokens</dd>
+
+    <dt>2. Syntax Analyzer</dt>
+    <dd>Produce an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax
+      Tree</a> by the usage of an hand written <a
+      href="https://en.wikipedia.org/wiki/Recursive_descent_parser">Recursive Descent
+      Parser</a></dd>
+
+    <dt>3. Semantic Analyzer</dt>
+    <dd>Check languages rules.</dd>
+
+    <dt>4. SSA Converter</dt>
+    <dd>Convert the AST tree into a <a
+      href="https://en.wikipedia.org/wiki/Static_single_assignment_form">SSA</a> tree.</dd>
+
+    <dt>5. LLVMifier</dt>
+    <dd>Convert the SSA tree into LLVM assembly language.</dd>
+
+    <dt>6. llvm-as</dt>
+    <dd>Translate LLVM assembly language into LLVM bitcode.</dd>
+
+    <dt>7. llvm-link</dt>
+    <dd>Link all compilation units together</dd>
+
+    <dt>8. opt</dt>
+    <dd>Run global optimization</dd>
+
+    <dt>9. llc</dt>
+    <dd>Compile optimized LLVM bytecode into a native object file</dd>
+
+    <dt>10. linker</dt>
+    <dd>Use the target platform to link the native object file into an executable binary</dd>
+  </dl>
+  Optionally, the 9th and 10th step can be replaced with lli to directly execute program from
+  LLVM bitcode.
+</div>
+
 <h1>Language specification</h1>
 <div>
 <ul>
