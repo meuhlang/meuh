@@ -7,3 +7,9 @@ Diagram(
     ,NonTerminal('import-declaration')
     ,NonTerminal('class-declaration')
 ).addTo(find('.compilation-unit'));
+
+Diagram(
+    Terminal('package')
+    ,NonTerminal('package-name')
+    ,Terminal(';')
+).addTo(find('.package-declaration'));
