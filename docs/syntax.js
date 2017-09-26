@@ -3,7 +3,7 @@
 window.find = document.querySelector.bind(document);
 
 Diagram(
-    NonTerminal('package-declaration')
+    NonTerminal('package-declaration', '#package-declaration')
     ,NonTerminal('import-declaration')
     ,NonTerminal('class-declaration')
 ).addTo(find('.compilation-unit'));
