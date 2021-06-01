@@ -2,70 +2,105 @@
 
 window.find = document.querySelector.bind(document);
 
+function HrefNonTerminal(text) {
+    return NonTerminal(text, '#' + text);
+}
+
 Diagram(
-    NonTerminal('package-declaration', '#package-declaration')
-    ,Optional(
-        NonTerminal('import-declaration', '#import-declaration')
+    HrefNonTerminal('package')
+    ,ZeroOrMore(
+        HrefNonTerminal('import')
     )
-    ,NonTerminal('class-declaration', '#class-declaration')
+    ,OneOrMore(Choice(0
+        ,HrefNonTerminal('struct')
+        ,HrefNonTerminal('class')
+    ))
 ).addTo(find('.compilation-unit'));
 
 Diagram(
-    Terminal('package')
-    ,NonTerminal('package-name', '#package-name')
-    ,Terminal(';')
-).addTo(find('.package-declaration'));
+    Terminal('[a-zA-Z_]')
+    ,ZeroOrMore('[a-zA-Z_0-9]')
+).addTo(find('.identifier'));
 
 Diagram(
-    NonTerminal('identifier', '#identifier')
+    HrefNonTerminal('identifier')
     ,ZeroOrMore(Sequence(
         Terminal('.')
-        ,NonTerminal('identifier', '#identifier')
+        ,HrefNonTerminal('identifier')
     ))
-).addTo(find('.package-name'));
+).addTo(find('.fully-qualified-name'));
+
+Diagram(
+    Terminal('package')
+    ,HrefNonTerminal('fully-qualified-name')
+    ,Terminal(';')
+).addTo(find('.package'));
 
 Diagram(
     Terminal('import')
-    ,Choice(0,
-        Sequence(
-            NonTerminal('package-name', '#package-name')
-            ,Terminal('.')
-            ,NonTerminal('identifier', '#identifier')
-            ,Optional(Sequence(
-                Terminal('as')
-                ,NonTerminal('identifier', '#identifier')
-            ))
-        )
-        ,Sequence(
-            Terminal('static')
-            ,NonTerminal('package-name', '#package-name')
-            ,Terminal('.')
-            ,NonTerminal('identifier', '#identifier')
-            ,Terminal('.')
-            ,Choice(
-                0
-                ,Terminal('*')
-                ,Sequence(
-                    NonTerminal('identifier', '#identifier')
-                    ,Optional(Sequence(
-                        Terminal('as')
-                        ,NonTerminal('identifier', '#identifier')
-                    ))
-                )
-            )
-        )
-    )
+    ,Optional(Terminal('static'))
+    ,HrefNonTerminal('fully-qualified-name')
+    ,Optional(Sequence(
+        Terminal('as')
+        ,HrefNonTerminal('identifier')
+    ))
     ,Terminal(';')
-).addTo(find('.import-declaration'));
+).addTo(find('.import'));
 
 Diagram(
-    Terminal('class')
-    ,NonTerminal('identifier', '#identifier')
+    HrefNonTerminal('visibility')
+    ,Terminal('struct')
+    ,HrefNonTerminal('identifier')
     ,Terminal('{')
-    ,Optional(Choice(0
-        ,NonTerminal('member-declaration', '#member-variable-declaration')
-        ,NonTerminal('method-declaration', '#method-declaration')
+    ,ZeroOrMore(Choice(0
+        ,HrefNonTerminal('member')
+        ,HrefNonTerminal('method')
     ))
     ,Terminal('}')
     ,Terminal(';')
-).addTo(find('.class-declaration'));
+).addTo(find('.struct'));
+
+Diagram(
+    HrefNonTerminal('visibility')
+    ,Terminal('class')
+    ,HrefNonTerminal('identifier')
+    ,Terminal('{')
+    ,Optional(OneOrMore(Choice(0
+        ,HrefNonTerminal('member')
+        ,HrefNonTerminal('method')
+    )))
+    ,Terminal('}')
+    ,Terminal(';')
+).addTo(find('.class'));
+
+Diagram(
+    HrefNonTerminal('visibility')
+    ,Optional(Terminal('static'))
+    ,Optional(Terminal('const'))
+    ,HrefNonTerminal('identifier')
+    ,Optional(Sequence(
+        Terminal('=')
+        ,HrefNonTerminal('expression')
+    ))
+).addTo(find('.member'));
+
+Diagram(
+    HrefNonTerminal('visibility')
+    ,Optional(Terminal('static'))
+    ,HrefNonTerminal('return-value')
+    ,Terminal('(')
+    ,Optional(HrefNonTerminal('argument-list'))
+    ,Terminal(')')
+    ,Terminal('{')
+    ,Optional(HrefNonTerminal('statement-list'))
+    ,Terminal('}')
+    ,Optional(Terminal('const'))
+).addTo(find('.method'));
+
+Diagram(
+    Optional(Choice(0
+        ,Terminal('public')
+        ,Terminal('protected')
+        ,Terminal('private')
+    ))
+).addTo(find('.visibility'));
