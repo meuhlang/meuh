@@ -22,6 +22,12 @@ jobs:
             --clean \
             --config-file ./site/mkdocs.yml \
             --strict
+      - name: Package website
+        run: tar -cvzf website.tar -C site site
+      - uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: website.tar
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
