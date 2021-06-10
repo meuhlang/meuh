@@ -1,0 +1,30 @@
+name: mkdocs
+
+on: push
+# on:
+#   push:
+#     branches:
+#       - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install mkdocs
+        run: pip install mkdocs==1.2
+      - name: Build
+        run: |
+          mkdocs build \
+            --clean \
+            --config-file ./site/mkdocs.yml \
+            --strict
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: site/site
+          git-config-name: ${{ github.event.head_commit.author.name }}
