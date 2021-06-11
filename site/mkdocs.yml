@@ -7,8 +7,6 @@ copyright: Copyright © 2019-2021 VERDOÏA Laurent <verdoialaurent@gmail.com>
 remote_branch: main
 theme:
   name: readthedocs
-  collapse_navigation: True
-  titles_only: True
   analytics:
     gtag: 'G-JTM3PRWNW6'
 
