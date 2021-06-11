@@ -1,0 +1,14 @@
+site_name: MeuhLang
+site_url: https://meuhlang.github.io/meuh/
+site_description: The meuh programming language
+site_author: VERDOÏA Laurent <verdoialaurent@gmail.com>
+copyright: Copyright © 2019-2021 VERDOÏA Laurent <verdoialaurent@gmail.com>
+
+remote_branch: main
+theme:
+  name: readthedocs
+  analytics:
+    gtag: 'G-JTM3PRWNW6'
+
+markdown_extensions:
+  - footnotes
