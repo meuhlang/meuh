@@ -11,3 +11,6 @@ theme:
   titles_only: True
   analytics:
     gtag: 'G-JTM3PRWNW6'
+
+markdown_extensions:
+  - footnotes
