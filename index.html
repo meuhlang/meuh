@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Welcome to MkDocs";
+    var mkdocs_page_name = "The meuh programming language";
     var mkdocs_page_input_path = "index.md";
     var mkdocs_page_url = "/meuh/";
   </script>
@@ -55,7 +55,23 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Welcome to MkDocs</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">The meuh programming language</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kind-of-language">Kind of language</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#source-code-example">Source code example</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-toolchain">The toolchain</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#license">License</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="syntax/">Meuh language syntax</a>
                     </li>
                 </ul>
       </div>
@@ -79,7 +95,7 @@
     
       
     
-    <li>Welcome to MkDocs</li>
+    <li>The meuh programming language</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -91,25 +107,115 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+                <h1 id="the-meuh-programming-language">The meuh programming language</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The goal of this project is to implement a programming language which can permit any
+programmer to work easier without ruminating bad injury about used language.<br />
+On the second hand, this can be a hobby for a time.</p>
+<h2 id="kind-of-language">Kind of language</h2>
+<p>The language adopts the philosophy of <a href="https://en.wikipedia.org/wiki/Write_once,_compile_anywhere">write once, compile anywhere</a>
+and <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>.</p>
+<p>It is a general purpose <a href="https://en.wikipedia.org/wiki/Turing_completeness">Turing Complete</a> language with a least those paradigms :</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li>Imperative</li>
+<li>Object-Oriented</li>
+<li>Procedural</li>
+<li>Concurrent</li>
+<li>Generic Programming</li>
+<li>Reflection</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<p>The next features will also be implemented :</p>
+<ul>
+<li>Thread multiplexing with <a href="http://llvm.org/docs/Coroutines.html">LLVM coroutines</a> like in go with the <a href="https://golang.org/doc/effective_go.html#goroutines">goroutine</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Anonymous_function">Anonymous functions</a> called as Lambda expressions</li>
+<li>... to be continued</li>
+</ul>
+<h2 id="source-code-example">Source code example</h2>
+<pre><code class="language-javascript">package io.meuh.test;
+
+import meuh.lang.Number;
+import meuh.lang.Integer;
+
+public class IntegerCalculator extends Calculator implement PolynomialResolver {
+  public int main(const String[] &amp;amp;argv) throws PolynomialException {
+    if (argv.length &amp;lt; 1) {
+      System.stdout.println(&quot;Need arguments&quot;);
+      return 0;
+    }
+    return resolve(new Number[]{
+      Integer.decodeString(argv[1]),
+      Integer.decodeString(argv[2]),
+    }).toInt();
+  }
+
+  protected Number resolve(const Number[] &amp;amp;numbers) throws PolynomialException {
+    if (numbers.length != 2) {
+      throw new IllegalArgumentException(&quot;Only 2 numbers are expected, not: &quot; + numbers.length);
+    }
+    return resolve(numbers[0], numbers[1]);
+  }
+
+  /** Solve a*x+b=0 */
+  public Integer polynome(const Integer &amp;amp;a, const Integer &amp;amp;b) throws PolynomialException {
+    if (a == 0) {
+      throw new PolynomialException(&quot;The value of a is zero&quot;);
+    }
+    return -b/a;
+  }
+}
 </code></pre>
+<h2 id="the-toolchain">The toolchain</h2>
+<p>The compiler <a href="https://en.wikipedia.org/wiki/Compiler#Front_end">front-end</a> will be part of this project, and <a href="https://llvm.org/">LLVM</a>
+will be used for the <a href="https://en.wikipedia.org/wiki/Compiler#Back_end">back-end</a>.</p>
+<p>Compilation phases per compilation unit :</p>
+<ol>
+<li><strong>Lexical Analyzer</strong>: Produce tokens.</li>
+<li><strong>Syntax Analyzer</strong>: Produce an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> by the usage of an hand written <a href="https://en.wikipedia.org/wiki/Recursive_descent_parser">Recursive Descent Parser</a>.</li>
+<li><strong>Semantic Analyzer</strong>: Check languages rules.</li>
+<li><strong>SSA Converter</strong>: Convert the <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">AST</a> tree into a <a href="https://en.wikipedia.org/wiki/Static_single_assignment_form">SSA</a> tree.</li>
+<li><strong>LLVMifier</strong>: Convert the <a href="https://en.wikipedia.org/wiki/Static_single_assignment_form">SSA</a> tree into LLVM assembly language.</li>
+<li><strong><a href="https://llvm.org/docs/CommandGuide/llvm-as.html">llvm-as</a></strong>: Translate LLVM assembly language into LLVM bitcode.</li>
+<li><strong><a href="https://llvm.org/docs/CommandGuide/llvm-link.html">llvm-link</a></strong>: Link all compilation units together.</li>
+<li><strong><a href="https://llvm.org/docs/CommandGuide/opt.html">opt</a></strong>: Run global optimization</li>
+<li><strong><a href="https://llvm.org/docs/CommandGuide/llc.html">llc</a></strong>: Compile optimized LLVM bytecode into a native object file</li>
+<li><strong><a href="https://lld.llvm.org/">lld</a></strong>: Use the LLVM linker to link the native object file into an executable binary. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+</ol>
+<p>Optionally, the 9th and 10th step can be replaced with <a href="https://llvm.org/docs/CommandGuide/lli.html">lli</a> to directly execute program from LLVM bitcode.</p>
+<h2 id="license">License</h2>
+<pre><code class="language-plain">Copyright © 2019-2021 VERDOÏA Laurent &lt;verdoialaurent@gmail.com&gt;
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+</code></pre>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>On macOS, only the host linker is supported&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="syntax/" class="btn btn-neutral float-right" title="Meuh language syntax">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>
@@ -136,6 +242,8 @@ docs/
     
     
     
+      <span><a href="syntax/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
   </span>
 </div>
     <script>var base_url = '.';</script>
@@ -153,5 +261,5 @@ docs/
 
 <!--
 MkDocs version : 1.2
-Build Date UTC : 2021-06-10 20:27:53.899547+00:00
+Build Date UTC : 2021-06-11 21:32:13.290623+00:00
 -->
