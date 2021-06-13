@@ -7,7 +7,7 @@
 
 This is the revisited tradional first program :
 
-```
+```swift
 func main() {
     println("Hello, world!")
 }
@@ -23,7 +23,7 @@ and let you understand the spirit of this language.
 
 ### Variable + Constants
 
-```
+```swift
 let myConstant = 42
 var myVariable = 42
 myVariable = 24
@@ -31,7 +31,7 @@ myVariable = 24
 
 ### Type inferance
 
-```
+```swift
 let implicitInteger = 314
 let implicitDouble = 3.14159
 let explicitDouble: double = 3.14159
@@ -39,7 +39,7 @@ let explicitDouble: double = 3.14159
 
 ### Casting
 
-```
+```swift
 let text = "Your age is: "
 let age = 42
 let dialog = text + String(age)
@@ -47,7 +47,7 @@ let dialog = text + String(age)
 
 ### Text formating
 
-```
+```swift
 let age = 42
 let yearsText = "You arge %{age} years old"
 let monthText = "You arge %{age*12} months old"
@@ -55,7 +55,7 @@ let monthText = "You arge %{age*12} months old"
 
 ### Array and slices
 
-```
+```swift
 var emptyArray: [42]String
 var emptySlice: []String
 let populatedSlice = ["Solid", "Liquid", "Gas"]
