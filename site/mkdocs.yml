@@ -5,10 +5,62 @@ site_author: VERDOÏA Laurent <verdoialaurent@gmail.com>
 copyright: Copyright © 2019-2021 VERDOÏA Laurent <verdoialaurent@gmail.com>
 
 remote_branch: main
-theme:
-  name: readthedocs
+
+extra:
   analytics:
-    gtag: 'G-JTM3PRWNW6'
+    provider: google
+    property: G-JTM3PRWNW6
+
+theme:
+  name: material
+  icon:
+    logo: material/cow
+  favicon: favicon.png
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
 
 markdown_extensions:
+  - admonition
   - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - 'About':
+      - about/index.md
+      - about/open-source.md
+      - 'License': about/license.md
+  - 'Getting Started':
+    - started/index.md
+    # - started/installing.md
+    # - started/packages.md
+    # - started/debugging.md
+  - 'Tools':
+    - tools/index.md
+    # - tools/build.md
+    # - tools/run.md
+    # - tools/package.md
+    # - tools/fmt.md
+  - 'Programming Guide':
+    - guide/index.md
+    # - guide/basics.md
+    # - guide/strings.md
+    # - guide/control-flow.md
+    # - guide/...
+  - 'Reference':
+    - reference/index.md
+    # - reference/lexical-structure.md
+    # - reference/types.md
+    # - reference/class.md
+    # - reference/lambda.md
+    # - reference/...
+  - 'Standard Library':
+    - stdlib/index.md
+  - 'Community':
+    - community/index.md
+    # - community/contributing.md
+    # - community/governance.md

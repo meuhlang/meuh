@@ -11,7 +11,10 @@ jobs:
         with:
           python-version: 3.9
       - name: Install mkdocs
-        run: pip install mkdocs==1.2
+        run: |
+          pip install \
+            mkdocs-material==7.1.8 \
+            mkdocs==1.2
       - name: Build
         run: |
           mkdocs build \

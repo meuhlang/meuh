@@ -1,4 +1,7 @@
-# Meuh language syntax
+# MeuhLang syntax
+
+!!! note ""
+    :warning: This section is still in progress
 
 This document present a syntactic grammar for the language.
 
@@ -43,6 +46,6 @@ import static com.example.lib.Integer.parseString as exampleParseString;
 ## Visibility
 <div class="visibility"></div>
 
-<link href="../3rdparty/railroad-diagrams/railroad-diagrams.css" rel="stylesheet" />
-<script src="../3rdparty/railroad-diagrams/railroad-diagrams.js" type="text/javascript"></script>
-<script src="../javascripts/syntax.js" type="text/javascript"></script>
+<link href="railroad-diagrams.css" rel="stylesheet" />
+<script src="railroad-diagrams.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
