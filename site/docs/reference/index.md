@@ -3,11 +3,11 @@
 !!! note ""
     :warning: This section is still in progress
 
-This document present a syntactic grammar for the language.
+This document present the syntactic grammar of the MeuhLang.
 
 ## Compilation Unit
 
-A `compilation-unit` define defines the overall structure of a source file.
+A `compilation-unit` defines the overall structure of a source file.
 
 <div class="compilation-unit"></div>
 

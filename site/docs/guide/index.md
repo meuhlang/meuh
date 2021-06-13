@@ -5,7 +5,7 @@
 
 ## Your first program
 
-This is the revisited tradional first program :
+This is the revisited traditional first program :
 
 ```swift
 func main() {

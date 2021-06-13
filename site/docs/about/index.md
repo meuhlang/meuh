@@ -9,7 +9,7 @@ Talk about:
 
 - features (generics, coroutines, garbage-collector, ...)
 - open source
-- List projects (compiler, standart library)
+- List of projects (compiler, standart library)
 - platform support
 
 
@@ -19,6 +19,7 @@ Talk about:
 
 
 ## Introduction
+
 The goal of this project is to implement a programming language which can permit any
 programmer to work easier without ruminating bad injury about used language.  
 On the second hand, this can be a hobby for a time.
@@ -28,7 +29,7 @@ On the second hand, this can be a hobby for a time.
 The language adopts the philosophy of [write once, compile anywhere][woca]
 and [KISS][kiss].
 
-It is a general purpose [Turing Complete][Turing] language with a least those paradigms :
+It is a general purpose [Turing Complete][Turing] language with at least those paradigms :
 
 - Imperative
 - Object-Oriented
@@ -88,9 +89,9 @@ will be used for the [back-end][back-end].
 Compilation phases per compilation unit :
 
 1. **Lexical Analyzer**: Produce tokens.
-2. **Syntax Analyzer**: Produce an [Abstract Syntax Tree][ast] by the usage of an hand written [Recursive Descent Parser][rdp].
+2. **Syntax Analyzer**: Produce an [Abstract Syntax Tree][ast] by the usage of a handwritten [Recursive Descent Parser][rdp].
 3. **Semantic Analyzer**: Check languages rules.
-4. **SSA Converter**: Convert the [AST][ast] tree into a [SSA][ssa] tree.
+4. **SSA Converter**: Convert the [AST][ast] tree into an [SSA][ssa] tree.
 5. **LLVMifier**: Convert the [SSA][ssa] tree into LLVM assembly language.
 6. **[llvm-as][llvm-as]**: Translate LLVM assembly language into LLVM bitcode.
 7. **[llvm-link][llvm-link]**: Link all compilation units together.
