@@ -18,6 +18,7 @@ FROM python:3.9.5-slim-buster
 RUN pip install \
         --disable-pip-version-check \
         --no-cache-dir \
+        mkdocs-material==7.1.8 \
         mkdocs==1.2
 
 CMD ["/usr/local/bin/mkdocs"]

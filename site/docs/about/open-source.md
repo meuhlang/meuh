@@ -1,20 +1,8 @@
-<!-- vim:set ts=4 sw=4 tw=100 et: -->
+# Open Source Declaration
 
-# The meuh programming language
+The Meuh language, supporting libraries and tools are published under the [GPL v3](../gpl-3.0/).
 
-A simple and not frustrating programming language.
-
-## Some feature
-
-- [Garbage Collector](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science))
-- Thread multiplexing like [goroutine](https://golang.org/doc/effective_go.html#goroutines) with
-    the [LLVM coroutine](https://llvm.org/docs/Coroutines.html) functionality
-- Lambda
-
-## License
-
-Full license can be found in the [LICENSE](LICENSE) file.
-
+!!! note ""
     Copyright © 2019-2021 VERDOÏA Laurent <verdoialaurent@gmail.com>
 
     This program is free software: you can redistribute it and/or modify
@@ -29,3 +17,6 @@ Full license can be found in the [LICENSE](LICENSE) file.
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+More information about how the community work ca be found in the [community section](../community) of this website.  
+And as always, everybody is welcome !

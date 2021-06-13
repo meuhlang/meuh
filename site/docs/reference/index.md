@@ -1,10 +1,13 @@
-# Meuh language syntax
+# MeuhLang syntax
 
-This document present a syntactic grammar for the language.
+!!! note ""
+    :warning: This section is still in progress
+
+This document present the syntactic grammar of the MeuhLang.
 
 ## Compilation Unit
 
-A `compilation-unit` define defines the overall structure of a source file.
+A `compilation-unit` defines the overall structure of a source file.
 
 <div class="compilation-unit"></div>
 
@@ -43,6 +46,6 @@ import static com.example.lib.Integer.parseString as exampleParseString;
 ## Visibility
 <div class="visibility"></div>
 
-<link href="../3rdparty/railroad-diagrams/railroad-diagrams.css" rel="stylesheet" />
-<script src="../3rdparty/railroad-diagrams/railroad-diagrams.js" type="text/javascript"></script>
-<script src="../javascripts/syntax.js" type="text/javascript"></script>
+<link href="railroad-diagrams.css" rel="stylesheet" />
+<script src="railroad-diagrams.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
