@@ -27,7 +27,7 @@ main() {
     - < ./scripts/mkdocs.Dockerfile
 
   _container run \
-    --mount "type=bind,src=${PWD}/site,dst=/work,ro,z" \
+    --mount "type=bind,src=${PWD}/site,dst=/work,z" \
     --workdir /work \
     --network host \
     local/meuh/mkdocs:latest \
