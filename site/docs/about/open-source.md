@@ -1,6 +1,6 @@
 # Open Source Declaration
 
-The Meuh language, supporting libraries and tools are published under the [GPL v3](../gpl-3.0/).
+The Meuh language, supporting libraries and tools are published under the [GPL v3](../license/).
 
 !!! note ""
     Copyright © 2019-2021 VERDOÏA Laurent <verdoialaurent@gmail.com>
@@ -18,5 +18,5 @@ The Meuh language, supporting libraries and tools are published under the [GPL v
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-More information about how the community work ca be found in the [community section](../community) of this website.  
+More information about how the community work ca be found in the [community section](../../community/) of this website.  
 And as always, everybody is welcome !
