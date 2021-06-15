@@ -1,0 +1,72 @@
+name: Website generation
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install mkdocs
+        run: |
+          pip install \
+            mkdocs-material==7.1.8 \
+            mkdocs==1.2
+      - name: Build
+        run: |
+          mkdocs build \
+            --clean \
+            --config-file ./site/mkdocs.yml \
+            --strict
+      - name: Package website
+        run: tar -cvzf website.tar -C site/site .
+      - uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: website.tar
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.1
+      - name: Install html-proofer
+        run: gem install html-proofer --version "=3.19.1"
+      - uses: actions/download-artifact@v2
+        with:
+          name: website
+      - name: Unpack the website
+        run: |
+          mkdir -p website/meuh
+          tar -xvf website.tar -C website/meuh
+      - name: Run html-proofer
+        run: |
+          htmlproofer ./website \
+            --allow-hash-href \
+            --enforce-https \
+            --url-ignore '/fonts.gstatic.com/'
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test]
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: website
+      - name: Unpack the website
+        run: |
+          mkdir website
+          tar -xvf website.tar -C website
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: website
+          git-config-name: ${{ github.event.head_commit.author.name }}
