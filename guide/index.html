@@ -20,7 +20,7 @@
     
     
       
-        <title>The MeuhLang Guide - MeuhLang</title>
+        <title>A MeuhLang Tour - MeuhLang</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-meuhlang-guide" class="md-skip">
+        <a href="#a-meuhlang-tour" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The MeuhLang Guide
+              A MeuhLang Tour
             
           </span>
         </div>
@@ -523,12 +523,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          The MeuhLang Guide
+          A MeuhLang Tour
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        The MeuhLang Guide
+        A MeuhLang Tour
       </a>
       
         
@@ -561,15 +561,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-constants" class="md-nav__link">
-    Variable + Constants
+  <a href="#variables-and-mutability" class="md-nav__link">
+    Variables and Mutability
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-inferance" class="md-nav__link">
-    Type inferance
+  <a href="#type-inference" class="md-nav__link">
+    Type inference
   </a>
   
 </li>
@@ -582,15 +582,62 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#text-formating" class="md-nav__link">
-    Text formating
+  <a href="#simple-text-formatting" class="md-nav__link">
+    Simple Text formatting
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#array-and-slices" class="md-nav__link">
-    Array and slices
+  <a href="#array-and-slice" class="md-nav__link">
+    Array and Slice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-if-conditional" class="md-nav__link">
+    The if conditional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-values" class="md-nav__link">
+    Optional values
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional" class="md-nav__link">
+    Conditional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    Chaining
   </a>
   
 </li>
@@ -686,7 +733,7 @@
   
     <li class="md-nav__item">
       <a href="../stdlib/" class="md-nav__link">
-        The MeuhLang Standard Library
+        The Meuhlang Standard Library
       </a>
     </li>
   
@@ -781,15 +828,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-constants" class="md-nav__link">
-    Variable + Constants
+  <a href="#variables-and-mutability" class="md-nav__link">
+    Variables and Mutability
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#type-inferance" class="md-nav__link">
-    Type inferance
+  <a href="#type-inference" class="md-nav__link">
+    Type inference
   </a>
   
 </li>
@@ -802,15 +849,62 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#text-formating" class="md-nav__link">
-    Text formating
+  <a href="#simple-text-formatting" class="md-nav__link">
+    Simple Text formatting
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#array-and-slices" class="md-nav__link">
-    Array and slices
+  <a href="#array-and-slice" class="md-nav__link">
+    Array and Slice
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-if-conditional" class="md-nav__link">
+    The if conditional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-values" class="md-nav__link">
+    Optional values
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional" class="md-nav__link">
+    Conditional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    Chaining
   </a>
   
 </li>
@@ -833,46 +927,171 @@
               
                 
                 
-                <h1 id="the-meuhlang-guide">The MeuhLang Guide</h1>
+                <h1 id="a-meuhlang-tour">A MeuhLang Tour</h1>
 <div class="admonition note">
 <p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> This section is still in progress</p>
 </div>
 <h2 id="your-first-program">Your first program</h2>
 <p>This is the revisited traditional first program :</p>
-<div class="highlight"><pre><span></span><code><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 </code></pre></div>
 <p>Every program entry point should start with the <code>main()</code> function.
 You don't need to write semicolons at the end of every statement.</p>
 <p>This tour gives you enough information to start writing software in Meuh
 and let you understand the spirit of this language.</p>
 <h2 id="simple-values">Simple Values</h2>
-<h3 id="variable-constants">Variable + Constants</h3>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">myConstant</span> <span class="p">=</span> <span class="mi">42</span>
-<span class="kd">var</span> <span class="nv">myVariable</span> <span class="p">=</span> <span class="mi">42</span>
-<span class="n">myVariable</span> <span class="p">=</span> <span class="mi">24</span>
+<h3 id="variables-and-mutability">Variables and Mutability</h3>
+<p>By default all variables are <strong>immutable</strong>.</p>
+<p>This means that once you assign a value to a variableconstant, you cannot change the value in a later assignment.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="linenos" data-linenos="2 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="linenos" data-linenos="4 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
-<h3 id="type-inferance">Type inferance</h3>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">implicitInteger</span> <span class="p">=</span> <span class="mi">314</span>
-<span class="kd">let</span> <span class="nv">implicitDouble</span> <span class="p">=</span> <span class="mf">3.14159</span>
-<span class="kd">let</span> <span class="nv">explicitDouble</span><span class="p">:</span> <span class="n">double</span> <span class="p">=</span> <span class="mf">3.14159</span>
+<p>The above example cannot compile since on line 4, we are trying to set another value to <code>x</code>.</p>
+<p>In way to take off the <strong>immutable</strong> facet of the variable, we can you the <code>mut</code> keyword.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="linenos" data-linenos="2 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="linenos" data-linenos="4 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos" data-linenos="5 "></span><span class="c1">// Prints:</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">// The value of x is 5.</span>
+<span class="linenos" data-linenos="7 "></span><span class="c1">// The value of x is 6.</span>
 </code></pre></div>
+<p>Use <code>const</code> to make a constant and <code>var</code> to make a variable.
+The value of a constant doesn't need to be known at compile tile, but you must assign
+it a value at declaration time.
+This means you can use constants to name a wheel known value that you determine once but use in many places.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">const</span> <span class="n">myConstant</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">var</span> <span class="n">mut</span> <span class="n">myVariable</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">myVariable</span> <span class="o">=</span> <span class="mi">24</span>
+</code></pre></div>
+<h3 id="type-inference">Type inference</h3>
+<p>A constant or variable must have the same type as the value you want to assign to.
+If you do not write the type, the compiler will infer its type.
+When the initial declaration or assignment doesn't provide enough information,
+specify the type by writing it after the variable, separated by a colon.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">const</span> <span class="n">implicitInteger</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">const</span> <span class="n">implicitDouble</span> <span class="p">=</span> <span class="mf">42.0</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">const</span> <span class="n">explicitDouble</span><span class="p">:</span> <span class="n">double</span> <span class="p">=</span> <span class="mi">42</span>
+</code></pre></div>
+<p>On the above example, without an explicit type declaration <code>double</code>,
+the constant <code>explicitDouble</code> would have been inferred as an integer.</p>
 <h3 id="casting">Casting</h3>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">text</span> <span class="p">=</span> <span class="s">&quot;Your age is: &quot;</span>
-<span class="kd">let</span> <span class="nv">age</span> <span class="p">=</span> <span class="mi">42</span>
-<span class="kd">let</span> <span class="nv">dialog</span> <span class="p">=</span> <span class="n">text</span> <span class="o">+</span> <span class="nb">String</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<p>With the type safety policy in MeuhLang, value are never implicitly converted to another type.
+You should use an explicit casting operator whenever a conversion is needed.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">text</span> <span class="p">=</span> <span class="s">&quot;Your age is: &quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">age</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">var</span> <span class="nv">dialog</span> <span class="p">=</span> <span class="n">text</span> <span class="o">+</span> <span class="n">string</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="text-formating">Text formating</h3>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nv">age</span> <span class="p">=</span> <span class="mi">42</span>
-<span class="kd">let</span> <span class="nv">yearsText</span> <span class="p">=</span> <span class="s">&quot;You arge %{age} years old&quot;</span>
-<span class="kd">let</span> <span class="nv">monthText</span> <span class="p">=</span> <span class="s">&quot;You arge %{age*12} months old&quot;</span>
+<h3 id="simple-text-formatting">Simple Text formatting</h3>
+<p>A simple way to formatting is to directly insert value inside a string, enclosed inside a <code>%{}</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">age</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">yearsText</span> <span class="p">=</span> <span class="s">&quot;You are %{age} years old&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">var</span> <span class="nv">monthText</span> <span class="p">=</span> <span class="s">&quot;You are %{age*12} months old&quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="kd">var</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">&quot;John Doe&quot;</span>
+<span class="linenos" data-linenos="5 "></span><span class="kd">var</span> <span class="nv">greeting</span> <span class="p">=</span> <span class="s">&quot;Hello, my name is </span><span class="se">\&quot;</span><span class="s">%{name}</span><span class="se">\&quot;</span><span class="s">.</span><span class="se">\n</span><span class="s">How are you ?&quot;</span>
 </code></pre></div>
-<h3 id="array-and-slices">Array and slices</h3>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">]</span><span class="nb">String</span>
-<span class="kd">var</span> <span class="nv">emptySlice</span><span class="p">:</span> <span class="p">[]</span><span class="nb">String</span>
-<span class="kd">let</span> <span class="nv">populatedSlice</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Solid&quot;</span><span class="p">,</span> <span class="s">&quot;Liquid&quot;</span><span class="p">,</span> <span class="s">&quot;Gas&quot;</span><span class="p">]</span>
-<span class="n">populatedSlice</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;Plasma&quot;</span><span class="p">)</span>
+<p>Multiple line text can be written within the three double quotation marks <code>"""</code>.
+To keep source code well-formed, indentation of the text is removed, as long as it matches the
+indentation of the closing three double quotation marks.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">&quot;John Doe&quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">multilineGreeting</span> <span class="p">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="s">Hello,my name is &quot;</span><span class="o">%</span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s">&quot;.</span>
+<span class="linenos" data-linenos="4 "></span><span class="s">How are you ?</span>
+<span class="linenos" data-linenos="5 "></span><span class="s">&quot;&quot;&quot;</span>
+</code></pre></div>
+<p>On the above examples, <code>greeting</code> and <code>multilineGreeting</code> have the same value.</p>
+<h3 id="array-and-slice">Array and Slice</h3>
+<p>Both <strong>array</strong> and <strong>slice</strong> permit keeping data indexed with a positive continuous set of
+integer, starting at 0.
+Array size must be defined during declaration when this is not needed for slice.
+This permit slice to growth and shrink on demand at runtime.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">]</span><span class="n">string</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">emptySlice</span><span class="p">:</span> <span class="p">[]</span><span class="n">string</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">var</span> <span class="nv">populatedArray</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="n">string</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Air&quot;</span><span class="p">,</span> <span class="s">&quot;Fire&quot;</span><span class="p">,</span> <span class="s">&quot;Water&quot;</span><span class="p">]</span>
+<span class="linenos" data-linenos="4 "></span><span class="kd">var</span> <span class="nv">mut</span> <span class="n">populatedSlice</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Air&quot;</span><span class="p">,</span> <span class="s">&quot;Fire&quot;</span><span class="p">]</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">populatedSlice</span> <span class="o">+=</span> <span class="s">&quot;Water&quot;</span>
+<span class="linenos" data-linenos="6 "></span><span class="kd">var</span> <span class="nv">remark</span> <span class="p">=</span> <span class="s">&quot;populatedArray length is %{populatedArray.length()}&quot;</span>
+</code></pre></div>
+<p>On the above example, after the execution, <code>populatedArray</code> and <code>populatedSlice</code> contains the same
+values.</p>
+<h2 id="control-flow">Control Flow</h2>
+<p>Use <code>if</code> and <code>switch</code> to make conditionals, use <code>for-in</code>, <code>while</code>, and <code>repeat-while</code> to make loops,
+and use <code>select</code> to wait for <code>send</code> or <code>receive</code> operations.
+Parentheses around the condition or loop variable are optional. Braces around the body are required.</p>
+<h3 id="the-if-conditional">The <code>if</code> conditional</h3>
+<p>The <code>if</code> conditional permit to execute one set of instructions or the other depending on the given
+condition.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">let</span> <span class="nv">hour</span> <span class="p">=</span> <span class="mi">9</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Morning&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Afternoon&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="c1">// Prints &quot;Morning&quot;</span>
+</code></pre></div>
+<h2 id="optional-values">Optional values</h2>
+<p>Optional contain an immutable value or <code>nil</code> to indicate that a value is missing.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalString</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;The optional value&quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">optionalInteger</span><span class="p">:</span> <span class="n">int</span><span class="p">?</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">var</span> <span class="nv">emptyOptional</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+</code></pre></div>
+<p>A safe way to get the contained value is to use the <code>?</code> operator.<br />
+The contained value is returned if present, otherwise a <code>nil</code> pointer is returned.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalString</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;My optional&quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">value</span> <span class="p">=</span> <span class="n">optionalString</span><span class="p">?</span>
+<span class="linenos" data-linenos="3 "></span><span class="bp">println</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="c1">// Prints &quot;My optional&quot;</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="kd">var</span> <span class="nv">fullyDeclaredValue</span><span class="p">:</span> <span class="nb">String</span><span class="o">*</span> <span class="p">=</span> <span class="n">optiona</span>
+</code></pre></div>
+<h3 id="conditional">Conditional</h3>
+<p>This can be usefull to be used as condition.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">serverResponse</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nv">userName</span> <span class="p">=</span> <span class="n">serverResponse</span><span class="p">?</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Username: %{userName}&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;User not found&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="chaining">Chaining</h3>
+<p>You can also take leverage of chaining.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">serverResponse</span><span class="p">:</span> <span class="n">ServerResponse</span><span class="p">?</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nv">adminId</span> <span class="p">=</span> <span class="n">serverResponse</span><span class="p">?</span><span class="n">group</span><span class="p">?</span><span class="n">admin</span><span class="p">?</span><span class="n">id</span><span class="p">?</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Admin user id: %{adminId}&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Admin ID not found&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>How to define an optional of a constant class instance ???<br />
+Should we use a pointer ?<br />
+How about integer ?<br />
+Should we use a generic class like <code>class Optional&lt;T&gt;{...}</code> as an underlying data model ?<br />
+Use case can be found in the next example.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">Element</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="kd">var</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">name</span> <span class="n">string</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="kd">func</span> <span class="nf">getName</span><span class="p">()</span> <span class="n">const</span> <span class="p">-&gt;</span> <span class="n">const</span> <span class="p">&amp;</span><span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="k">return</span> <span class="kc">self</span><span class="p">.</span><span class="n">name</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="n">const</span> <span class="n">AIR</span> <span class="p">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">&quot;Air&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span><span class="n">const</span> <span class="n">FIRE</span> <span class="p">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">&quot;Fire&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="15 "></span><span class="n">const</span> <span class="n">WATER</span> <span class="p">=</span> <span class="n">Element</span><span class="p">(</span><span class="s">&quot;Water&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="kd">var</span> <span class="nv">optionalElement</span><span class="p">:</span> <span class="n">RGBColor</span><span class="p">?</span> <span class="p">=</span> <span class="n">yellow</span>
+<span class="linenos" data-linenos="18 "></span><span class="n">printl</span>
 </code></pre></div>
                 
               

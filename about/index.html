@@ -589,7 +589,7 @@
   
     <li class="md-nav__item">
       <a href="../guide/" class="md-nav__link">
-        The MeuhLang Guide
+        A MeuhLang Tour
       </a>
     </li>
   
@@ -673,7 +673,7 @@
   
     <li class="md-nav__item">
       <a href="../stdlib/" class="md-nav__link">
-        The MeuhLang Standard Library
+        The Meuhlang Standard Library
       </a>
     </li>
   
@@ -843,38 +843,38 @@ and <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>.</p>
 <li>... to be continued</li>
 </ul>
 <h2 id="source-code-example">Source code example</h2>
-<div class="highlight"><pre><span></span><code><span class="kr">package</span> <span class="nx">io</span><span class="p">.</span><span class="nx">meuh</span><span class="p">.</span><span class="nx">test</span><span class="p">;</span>
-
-<span class="k">import</span> <span class="nx">meuh</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nb">Number</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">meuh</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Integer</span><span class="p">;</span>
-
-<span class="nx">public</span> <span class="kd">class</span> <span class="nx">IntegerCalculator</span> <span class="k">extends</span> <span class="nx">Calculator</span> <span class="nx">implement</span> <span class="nx">PolynomialResolver</span> <span class="p">{</span>
-  <span class="nx">public</span> <span class="kr">int</span> <span class="nx">main</span><span class="p">(</span><span class="kd">const</span> <span class="nb">String</span><span class="p">[]</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">argv</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">argv</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">System</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Need arguments&quot;</span><span class="p">);</span>
-      <span class="k">return</span> <span class="mf">0</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="k">new</span> <span class="nb">Number</span><span class="p">[]{</span>
-      <span class="nx">Integer</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span>
-      <span class="nx">Integer</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">2</span><span class="p">]),</span>
-    <span class="p">}).</span><span class="nx">toInt</span><span class="p">();</span>
-  <span class="p">}</span>
-
-  <span class="nx">protected</span> <span class="nb">Number</span> <span class="nx">resolve</span><span class="p">(</span><span class="kd">const</span> <span class="nb">Number</span><span class="p">[]</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">numbers</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span> <span class="o">!=</span> <span class="mf">2</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nx">IllegalArgumentException</span><span class="p">(</span><span class="s2">&quot;Only 2 numbers are expected, not: &quot;</span> <span class="o">+</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="nx">numbers</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
-  <span class="p">}</span>
-
-  <span class="cm">/** Solve a*x+b=0 */</span>
-  <span class="nx">public</span> <span class="nx">Integer</span> <span class="nx">polynome</span><span class="p">(</span><span class="kd">const</span> <span class="nx">Integer</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">a</span><span class="p">,</span> <span class="kd">const</span> <span class="nx">Integer</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">b</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="k">new</span> <span class="nx">PolynomialException</span><span class="p">(</span><span class="s2">&quot;The value of a is zero&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="o">-</span><span class="nx">b</span><span class="o">/</span><span class="nx">a</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kr">package</span> <span class="nx">io</span><span class="p">.</span><span class="nx">meuh</span><span class="p">.</span><span class="nx">test</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">import</span> <span class="nx">meuh</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nb">Number</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">import</span> <span class="nx">meuh</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Integer</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nx">public</span> <span class="kd">class</span> <span class="nx">IntegerCalculator</span> <span class="k">extends</span> <span class="nx">Calculator</span> <span class="nx">implement</span> <span class="nx">PolynomialResolver</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">public</span> <span class="kr">int</span> <span class="nx">main</span><span class="p">(</span><span class="kd">const</span> <span class="nb">String</span><span class="p">[]</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">argv</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">argv</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>      <span class="nx">System</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Need arguments&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span>      <span class="k">return</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="k">new</span> <span class="nb">Number</span><span class="p">[]{</span>
+<span class="linenos" data-linenos="13 "></span>      <span class="nx">Integer</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span>
+<span class="linenos" data-linenos="14 "></span>      <span class="nx">Integer</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">2</span><span class="p">]),</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="p">}).</span><span class="nx">toInt</span><span class="p">();</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>  <span class="nx">protected</span> <span class="nb">Number</span> <span class="nx">resolve</span><span class="p">(</span><span class="kd">const</span> <span class="nb">Number</span><span class="p">[]</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">numbers</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span> <span class="o">!=</span> <span class="mf">2</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span>      <span class="k">throw</span> <span class="k">new</span> <span class="nx">IllegalArgumentException</span><span class="p">(</span><span class="s2">&quot;Only 2 numbers are expected, not: &quot;</span> <span class="o">+</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span>    <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="nx">numbers</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
+<span class="linenos" data-linenos="23 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span>  <span class="cm">/** Solve a*x+b=0 */</span>
+<span class="linenos" data-linenos="26 "></span>  <span class="nx">public</span> <span class="nx">Integer</span> <span class="nx">polynome</span><span class="p">(</span><span class="kd">const</span> <span class="nx">Integer</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">a</span><span class="p">,</span> <span class="kd">const</span> <span class="nx">Integer</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">b</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
+<span class="linenos" data-linenos="27 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="28 "></span>      <span class="k">throw</span> <span class="k">new</span> <span class="nx">PolynomialException</span><span class="p">(</span><span class="s2">&quot;The value of a is zero&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="29 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="k">return</span> <span class="o">-</span><span class="nx">b</span><span class="o">/</span><span class="nx">a</span><span class="p">;</span>
+<span class="linenos" data-linenos="31 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="32 "></span><span class="p">}</span>
 </code></pre></div>
 <h2 id="the-toolchain">The toolchain</h2>
 <p>The compiler <a href="https://en.wikipedia.org/wiki/Compiler#Front_end">front-end</a> will be part of this project, and <a href="https://llvm.org/">LLVM</a>
@@ -894,20 +894,20 @@ will be used for the <a href="https://en.wikipedia.org/wiki/Compiler#Back_end">b
 </ol>
 <p>Optionally, the 9th and 10th step can be replaced with <a href="https://llvm.org/docs/CommandGuide/lli.html">lli</a> to directly execute program from LLVM bitcode.</p>
 <h2 id="license">License</h2>
-<div class="highlight"><pre><span></span><code>Copyright © 2019-2021 VERDOÏA Laurent &lt;verdoialaurent@gmail.com&gt;
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>Copyright © 2019-2021 VERDOÏA Laurent &lt;verdoialaurent@gmail.com&gt;
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>This program is free software: you can redistribute it and/or modify
+<span class="linenos" data-linenos=" 4 "></span>it under the terms of the GNU General Public License as published by
+<span class="linenos" data-linenos=" 5 "></span>the Free Software Foundation, either version 3 of the License, or
+<span class="linenos" data-linenos=" 6 "></span>(at your option) any later version.
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>This program is distributed in the hope that it will be useful,
+<span class="linenos" data-linenos=" 9 "></span>but WITHOUT ANY WARRANTY; without even the implied warranty of
+<span class="linenos" data-linenos="10 "></span>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<span class="linenos" data-linenos="11 "></span>GNU General Public License for more details.
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>You should have received a copy of the GNU General Public License
+<span class="linenos" data-linenos="14 "></span>along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
 </code></pre></div>
 <div class="footnote">
 <hr />
