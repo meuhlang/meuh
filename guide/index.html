@@ -684,6 +684,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objects-and-classes" class="md-nav__link">
     Objects and Classes
   </a>
@@ -691,8 +698,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enumerations-and-structures" class="md-nav__link">
-    Enumerations and Structures
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
   </a>
   
 </li>
@@ -1015,6 +1022,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#objects-and-classes" class="md-nav__link">
     Objects and Classes
   </a>
@@ -1022,8 +1036,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enumerations-and-structures" class="md-nav__link">
-    Enumerations and Structures
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
   </a>
   
 </li>
@@ -1149,10 +1163,10 @@ This permit slice to growth and shrink on demand at runtime.</p>
 <p>On the above example, after the execution, <code>populatedArray</code> and <code>populatedSlice</code> contains the same
 values.</p>
 <h3 id="optional-values">Optional values</h3>
-<p>Like <code>let</code> and <code>var</code>, optional can be constant or variable.
+<p>Optional values are immutables.<br />
 An optional either contains a value or contains <code>nil</code> to indicate that a value is missing.</p>
 <p>The question mark <code>?</code> operator permit to declare a type as optional.</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">let</span> <span class="nv">optionalString</span> <span class="n">string</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;The optional value&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalString</span> <span class="n">string</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;The optional value&quot;</span>
 <span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">emptyOptionalInteger</span> <span class="n">int</span><span class="p">?</span>
 </code></pre></div>
 <div class="admonition bug">
@@ -1175,21 +1189,21 @@ Use case can be found in the next example.</p>
 <span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
 <span class="linenos" data-linenos="11 "></span><span class="p">}</span>
 <span class="linenos" data-linenos="12 "></span>
-<span class="linenos" data-linenos="13 "></span><span class="kd">let</span> <span class="nv">yellow</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="linenos" data-linenos="14 "></span><span class="kd">let</span> <span class="nv">cyan</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<span class="linenos" data-linenos="15 "></span><span class="kd">let</span> <span class="nv">magenta</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="linenos" data-linenos="13 "></span><span class="kd">var</span> <span class="nv">yellow</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span><span class="kd">var</span> <span class="nv">cyan</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="linenos" data-linenos="15 "></span><span class="kd">var</span> <span class="nv">magenta</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
 <span class="linenos" data-linenos="16 "></span>
-<span class="linenos" data-linenos="17 "></span><span class="kd">let</span> <span class="nv">optionalColor</span><span class="p">:</span> <span class="n">RGBColor</span><span class="p">?</span> <span class="p">=</span> <span class="n">yellow</span>
-<span class="linenos" data-linenos="18 "></span><span class="kd">let</span> <span class="nv">optionalMutableColor</span><span class="p">:</span> <span class="n">mut</span> <span class="n">RGBColor</span><span class="p">?</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="linenos" data-linenos="17 "></span><span class="kd">var</span> <span class="nv">optionalColor</span><span class="p">:</span> <span class="n">RGBColor</span><span class="p">?</span> <span class="p">=</span> <span class="n">yellow</span>
+<span class="linenos" data-linenos="18 "></span><span class="kd">var</span> <span class="nv">optionalMutableColor</span><span class="p">:</span> <span class="n">mut</span> <span class="n">RGBColor</span><span class="p">?</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
 <span class="linenos" data-linenos="19 "></span><span class="n">optionalMutableColor</span><span class="p">?.</span><span class="n">red</span> <span class="p">=</span> <span class="mi">42</span>
 </code></pre></div>
 <p>You can use the <code>??</code> to use a default value when the value is missing.</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">let</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
 <span class="linenos" data-linenos="2 "></span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hello: &#39;%{optionalName ?? &quot;</span><span class="n">No</span> <span class="n">Body</span><span class="p">...</span><span class="s">&quot;}&#39;&quot;</span><span class="p">)</span>
 <span class="linenos" data-linenos="3 "></span><span class="c1">// Prints &quot;Hello: No Body...&quot;</span>
 </code></pre></div>
 <p>You can use the <code>!</code> to raise an error if the value is missing.</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">let</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
 <span class="linenos" data-linenos="2 "></span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hello: &#39;%{optionalName!}&#39;&quot;</span><span class="p">)</span>
 <span class="linenos" data-linenos="3 "></span><span class="c1">// Error is raised</span>
 </code></pre></div>
@@ -1218,7 +1232,7 @@ Parentheses around the condition or loop variable are optional. Braces around th
 <h3 id="the-if-conditional">The <code>if</code> conditional</h3>
 <p>The <code>if</code> conditional permit to execute one set of instructions or the other depending on the given
 condition.</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">let</span> <span class="nv">hour</span> <span class="p">=</span> <span class="mi">9</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">hour</span> <span class="p">=</span> <span class="mi">9</span>
 <span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">{</span>
 <span class="linenos" data-linenos="3 "></span>    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Morning&quot;</span><span class="p">)</span>
 <span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -1231,20 +1245,20 @@ You can use <code>if</code> and <code>var</code> together to restain variable sc
 <span class="linenos" data-linenos="2 "></span>    <span class="k">return</span> <span class="s">&quot;John Doe&quot;</span>
 <span class="linenos" data-linenos="3 "></span><span class="p">}</span>
 <span class="linenos" data-linenos="4 "></span>
-<span class="linenos" data-linenos="5 "></span><span class="k">if</span> <span class="nx">let</span> <span class="nx">name</span> <span class="p">=</span> <span class="nx">getName</span><span class="p">();</span> <span class="p">!</span><span class="nx">name</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nx">name</span> <span class="p">=</span> <span class="nx">getName</span><span class="p">();</span> <span class="p">!</span><span class="nx">name</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">()</span> <span class="p">{</span>
 <span class="linenos" data-linenos="6 "></span>    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Hello %{name}&quot;</span><span class="p">)</span>
 <span class="linenos" data-linenos="7 "></span><span class="p">}</span>
 <span class="linenos" data-linenos="8 "></span><span class="c1">// Prints &quot;Hello John Doe&quot;</span>
 </code></pre></div>
 <p>You can use <code>if</code> to work with optionals.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;John Doe&quot;</span>
-<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="kd">let</span> <span class="nv">name</span> <span class="p">=</span> <span class="n">optionalName</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nv">name</span> <span class="p">=</span> <span class="n">optionalName</span> <span class="p">{</span>
 <span class="linenos" data-linenos="3 "></span>    <span class="bp">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="linenos" data-linenos="4 "></span><span class="p">}</span>
 <span class="linenos" data-linenos="5 "></span><span class="c1">// Prints John Doe</span>
 </code></pre></div>
 <h3 id="the-for-in-loop">The <code>for-in</code> loop</h3>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">let</span> <span class="nv">interestingNumbers</span> <span class="p">=</span> <span class="p">[</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">var</span> <span class="nv">interestingNumbers</span> <span class="p">=</span> <span class="p">[</span>
 <span class="linenos" data-linenos=" 2 "></span>    <span class="s">&quot;Prime&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
 <span class="linenos" data-linenos=" 3 "></span>    <span class="s">&quot;Fibonacci&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
 <span class="linenos" data-linenos=" 4 "></span>    <span class="s">&quot;Square&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
@@ -1325,45 +1339,69 @@ You can use <code>if</code> and <code>var</code> together to restain variable sc
 <span class="linenos" data-linenos="7 "></span><span class="kd">var</span> <span class="nv">increment</span> <span class="p">=</span> <span class="n">makeIncrementer</span><span class="p">()</span>
 <span class="linenos" data-linenos="8 "></span><span class="n">increment</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="structures">Structures</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">struct</span> <span class="nc">Card</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="kd">var</span> <span class="nv">rank</span><span class="p">:</span> <span class="n">Rank</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="kd">var</span> <span class="nv">suit</span><span class="p">:</span> <span class="n">Suit</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="k">return</span> <span class="s">&quot;The %{rank.simpleDescription()} of %{suit.simpleDescription()}&quot;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="kd">var</span> <span class="nv">threeOfSpades</span> <span class="p">=</span> <span class="n">Card</span><span class="p">(</span><span class="n">rank</span><span class="p">:</span> <span class="p">.</span><span class="n">three</span><span class="p">,</span> <span class="n">suit</span><span class="p">:</span> <span class="p">.</span><span class="n">spades</span><span class="p">)</span>
+<span class="linenos" data-linenos="9 "></span><span class="kd">var</span> <span class="nv">threeOfSpadesDescription</span> <span class="p">=</span> <span class="n">threeOfSpades</span><span class="p">.</span><span class="n">simpleDescription</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="objects-and-classes">Objects and Classes</h2>
+<p>Classes are like structures but have a constructor and a destructor.</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">NamedShape</span> <span class="p">{</span>
-<span class="linenos" data-linenos=" 2 "></span>    <span class="kd">let</span> <span class="nv">numberOfSides</span><span class="p">:</span> <span class="n">int</span> <span class="p">=</span> <span class="mi">0</span>
-<span class="linenos" data-linenos=" 3 "></span>    <span class="kd">let</span> <span class="nv">name</span><span class="p">:</span> <span class="nb">String</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="kd">var</span> <span class="nv">numberOfSides</span><span class="p">:</span> <span class="n">int</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="kd">var</span> <span class="nv">mut</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span>
 <span class="linenos" data-linenos=" 4 "></span>
 <span class="linenos" data-linenos=" 5 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
 <span class="linenos" data-linenos=" 6 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
 <span class="linenos" data-linenos=" 7 "></span>    <span class="p">}</span>
 <span class="linenos" data-linenos=" 8 "></span>
 <span class="linenos" data-linenos=" 9 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="10 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="linenos" data-linenos="11 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">numberOfSides</span> <span class="p">=</span> <span class="n">numberOfSides</span>
 <span class="linenos" data-linenos="12 "></span>    <span class="p">}</span>
 <span class="linenos" data-linenos="13 "></span>
-<span class="linenos" data-linenos="14 "></span>    <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="n">const</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
-<span class="linenos" data-linenos="15 "></span>        <span class="k">return</span> <span class="s">&quot;A shape with </span><span class="si">\(</span><span class="n">numberOfSides</span><span class="si">)</span><span class="s"> sides.&quot;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">mut</span> <span class="kd">func</span> <span class="nf">setName</span><span class="p">(</span><span class="kc">_</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
 <span class="linenos" data-linenos="16 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
-<span class="linenos" data-linenos="18 "></span>
-<span class="linenos" data-linenos="19 "></span><span class="n">ns</span> <span class="p">=</span> <span class="n">NamedShape</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
-<span class="linenos" data-linenos="20 "></span>
-<span class="linenos" data-linenos="21 "></span><span class="kd">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">NamedShape</span> <span class="p">{</span>
-<span class="linenos" data-linenos="22 "></span>    <span class="kd">let</span> <span class="nv">mut</span> <span class="n">sideLength</span><span class="p">:</span> <span class="n">double</span>
-<span class="linenos" data-linenos="23 "></span>
-<span class="linenos" data-linenos="24 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">sideLength</span><span class="p">:</span> <span class="n">double</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="25 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">sideLength</span> <span class="p">=</span> <span class="n">sideLength</span>
-<span class="linenos" data-linenos="26 "></span>        <span class="kc">super</span><span class="p">.</span><span class="n">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;square&quot;</span><span class="p">)</span>
-<span class="linenos" data-linenos="27 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="28 "></span>
-<span class="linenos" data-linenos="29 "></span>    <span class="kd">func</span> <span class="nf">area</span><span class="p">()</span> <span class="n">const</span> <span class="p">-&gt;</span> <span class="n">double</span> <span class="p">{</span>
-<span class="linenos" data-linenos="30 "></span>        <span class="k">return</span> <span class="n">sideLength</span> <span class="o">*</span> <span class="n">sideLength</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>    <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="n">const</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="k">return</span> <span class="s">&quot;A shape with </span><span class="si">\(</span><span class="n">numberOfSides</span><span class="si">)</span><span class="s"> sides.&quot;</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="n">ns</span> <span class="p">=</span> <span class="n">NamedShape</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span><span class="kd">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">NamedShape</span> <span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="kd">var</span> <span class="nv">mut</span> <span class="n">sideLength</span><span class="p">:</span> <span class="n">double</span> <span class="p">{</span> <span class="kr">get</span> <span class="kr">set</span> <span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span>
+<span class="linenos" data-linenos="28 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">sideLength</span><span class="p">:</span> <span class="n">double</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="29 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">sideLength</span> <span class="p">=</span> <span class="n">sideLength</span>
+<span class="linenos" data-linenos="30 "></span>        <span class="kc">super</span><span class="p">.</span><span class="n">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;square&quot;</span><span class="p">)</span>
 <span class="linenos" data-linenos="31 "></span>    <span class="p">}</span>
 <span class="linenos" data-linenos="32 "></span>
-<span class="linenos" data-linenos="33 "></span>    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="n">const</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
-<span class="linenos" data-linenos="34 "></span>        <span class="k">return</span> <span class="s">&quot;A square with sides of length %{sideLength}.&quot;</span>
+<span class="linenos" data-linenos="33 "></span>    <span class="kd">func</span> <span class="nf">area</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">double</span> <span class="p">{</span>
+<span class="linenos" data-linenos="34 "></span>        <span class="k">return</span> <span class="n">sideLength</span> <span class="o">*</span> <span class="n">sideLength</span>
 <span class="linenos" data-linenos="35 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="36 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="36 "></span>
+<span class="linenos" data-linenos="37 "></span>    <span class="p">@</span><span class="n">Override</span>
+<span class="linenos" data-linenos="38 "></span>    <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="39 "></span>        <span class="k">return</span> <span class="s">&quot;A square with sides of length %{sideLength}.&quot;</span>
+<span class="linenos" data-linenos="40 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="41 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="42 "></span>
+<span class="linenos" data-linenos="43 "></span><span class="n">s</span> <span class="p">=</span> <span class="n">Square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos" data-linenos="44 "></span><span class="bp">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">area</span><span class="p">())</span>
+<span class="linenos" data-linenos="45 "></span><span class="c1">// Prints &quot;9&quot;</span>
+<span class="linenos" data-linenos="46 "></span><span class="n">s</span><span class="p">.</span><span class="n">setSideLength</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+<span class="linenos" data-linenos="47 "></span><span class="bp">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">area</span><span class="p">())</span>
+<span class="linenos" data-linenos="48 "></span><span class="c1">// Prints &quot;196&quot;</span>
 </code></pre></div>
-<h2 id="enumerations-and-structures">Enumerations and Structures</h2>
+<h2 id="enumerations">Enumerations</h2>
 <h2 id="error-handling">Error Handling</h2>
 <h2 id="generics">Generics</h2>
                 

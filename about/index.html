@@ -396,13 +396,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#old-documentation" class="md-nav__link">
-    Old documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
@@ -426,6 +419,13 @@
         <li class="md-nav__item">
   <a href="#the-toolchain" class="md-nav__link">
     The toolchain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-platforms" class="md-nav__link">
+    Supported platforms
   </a>
   
 </li>
@@ -753,13 +753,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#old-documentation" class="md-nav__link">
-    Old documentation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     Introduction
   </a>
@@ -788,6 +781,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#supported-platforms" class="md-nav__link">
+    Supported platforms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     License
   </a>
@@ -808,18 +808,6 @@
                 
                 
                 <h1 id="about-meuhlang">About MeuhLang</h1>
-<div class="admonition note">
-<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> This section is still in progress</p>
-</div>
-<p>Two lines about Meuh.</p>
-<p>Talk about:</p>
-<ul>
-<li>features (generics, coroutines, garbage-collector, ...)</li>
-<li>open source</li>
-<li>List of projects (compiler, standart library)</li>
-<li>platform support</li>
-</ul>
-<h2 id="old-documentation">Old documentation</h2>
 <h2 id="introduction">Introduction</h2>
 <p>The goal of this project is to implement a programming language which can permit any
 programmer to work easier without ruminating bad injury about used language.<br />
@@ -834,47 +822,47 @@ and <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>.</p>
 <li>Procedural</li>
 <li>Concurrent</li>
 <li>Generic Programming</li>
+<li>Garbage Collected</li>
 <li>Reflection</li>
 </ul>
-<p>The next features will also be implemented :</p>
+<p>Thoses features are also planed to be implemented :</p>
 <ul>
 <li>Thread multiplexing with <a href="https://llvm.org/docs/Coroutines.html">LLVM coroutines</a> like in go with the <a href="https://golang.org/doc/effective_go.html#goroutines">goroutine</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Anonymous_function">Anonymous functions</a> called as Lambda expressions</li>
 <li>... to be continued</li>
 </ul>
 <h2 id="source-code-example">Source code example</h2>
+<div class="admonition hint">
+<p>We should write a better example with at lease: Classes, Interfaces and Generics</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kr">package</span> <span class="nx">io</span><span class="p">.</span><span class="nx">meuh</span><span class="p">.</span><span class="nx">test</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 2 "></span>
-<span class="linenos" data-linenos=" 3 "></span><span class="k">import</span> <span class="nx">meuh</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nb">Number</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="k">import</span> <span class="nx">meuh</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Integer</span><span class="p">;</span>
-<span class="linenos" data-linenos=" 5 "></span>
-<span class="linenos" data-linenos=" 6 "></span><span class="nx">public</span> <span class="kd">class</span> <span class="nx">IntegerCalculator</span> <span class="k">extends</span> <span class="nx">Calculator</span> <span class="nx">implement</span> <span class="nx">PolynomialResolver</span> <span class="p">{</span>
-<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">public</span> <span class="kr">int</span> <span class="nx">main</span><span class="p">(</span><span class="kd">const</span> <span class="nb">String</span><span class="p">[]</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">argv</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
-<span class="linenos" data-linenos=" 8 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">argv</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos=" 9 "></span>      <span class="nx">System</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Need arguments&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="10 "></span>      <span class="k">return</span> <span class="mf">0</span><span class="p">;</span>
-<span class="linenos" data-linenos="11 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="12 "></span>    <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="k">new</span> <span class="nb">Number</span><span class="p">[]{</span>
-<span class="linenos" data-linenos="13 "></span>      <span class="nx">Integer</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span>
-<span class="linenos" data-linenos="14 "></span>      <span class="nx">Integer</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">2</span><span class="p">]),</span>
-<span class="linenos" data-linenos="15 "></span>    <span class="p">}).</span><span class="nx">toInt</span><span class="p">();</span>
-<span class="linenos" data-linenos="16 "></span>  <span class="p">}</span>
-<span class="linenos" data-linenos="17 "></span>
-<span class="linenos" data-linenos="18 "></span>  <span class="nx">protected</span> <span class="nb">Number</span> <span class="nx">resolve</span><span class="p">(</span><span class="kd">const</span> <span class="nb">Number</span><span class="p">[]</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">numbers</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
-<span class="linenos" data-linenos="19 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span> <span class="o">!=</span> <span class="mf">2</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="20 "></span>      <span class="k">throw</span> <span class="k">new</span> <span class="nx">IllegalArgumentException</span><span class="p">(</span><span class="s2">&quot;Only 2 numbers are expected, not: &quot;</span> <span class="o">+</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
-<span class="linenos" data-linenos="21 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="22 "></span>    <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span><span class="nx">numbers</span><span class="p">[</span><span class="mf">0</span><span class="p">],</span> <span class="nx">numbers</span><span class="p">[</span><span class="mf">1</span><span class="p">]);</span>
-<span class="linenos" data-linenos="23 "></span>  <span class="p">}</span>
-<span class="linenos" data-linenos="24 "></span>
-<span class="linenos" data-linenos="25 "></span>  <span class="cm">/** Solve a*x+b=0 */</span>
-<span class="linenos" data-linenos="26 "></span>  <span class="nx">public</span> <span class="nx">Integer</span> <span class="nx">polynome</span><span class="p">(</span><span class="kd">const</span> <span class="nx">Integer</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">a</span><span class="p">,</span> <span class="kd">const</span> <span class="nx">Integer</span> <span class="o">&amp;</span><span class="nx">amp</span><span class="p">;</span><span class="nx">b</span><span class="p">)</span> <span class="kr">throws</span> <span class="nx">PolynomialException</span> <span class="p">{</span>
-<span class="linenos" data-linenos="27 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="28 "></span>      <span class="k">throw</span> <span class="k">new</span> <span class="nx">PolynomialException</span><span class="p">(</span><span class="s2">&quot;The value of a is zero&quot;</span><span class="p">);</span>
-<span class="linenos" data-linenos="29 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="30 "></span>    <span class="k">return</span> <span class="o">-</span><span class="nx">b</span><span class="o">/</span><span class="nx">a</span><span class="p">;</span>
-<span class="linenos" data-linenos="31 "></span>  <span class="p">}</span>
-<span class="linenos" data-linenos="32 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nx">public</span> <span class="kr">interface</span> <span class="nx">PolynomialResolver</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="c1">// Solve the equation a*x+b=0</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nx">public</span> <span class="nx">solve</span><span class="p">(</span><span class="nx">a</span> <span class="nx">Int</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nx">Int</span><span class="p">,</span> <span class="nb">Error</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nx">public</span> <span class="kd">class</span> <span class="nx">IntegerCalculator</span> <span class="o">:</span> <span class="nx">PolynomialResolver</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="nx">public</span> <span class="k">static</span> <span class="nx">main</span><span class="p">(</span><span class="kd">const</span> <span class="nb">String</span><span class="p">[]</span> <span class="o">&amp;</span><span class="nx">argv</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nx">Int</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="k">if</span> <span class="nx">argv</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mf">3</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>      <span class="nx">System</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;Need arguments&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="12 "></span>      <span class="k">return</span> <span class="mf">0</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>    <span class="k">return</span> <span class="nx">resolve</span><span class="p">(</span>
+<span class="linenos" data-linenos="16 "></span>      <span class="nx">Int</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">1</span><span class="p">]),</span>
+<span class="linenos" data-linenos="17 "></span>      <span class="nx">Int</span><span class="p">.</span><span class="nx">decodeString</span><span class="p">(</span><span class="nx">argv</span><span class="p">[</span><span class="mf">2</span><span class="p">]),</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="p">});</span>
+<span class="linenos" data-linenos="19 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span>  <span class="nx">public</span> <span class="nx">solve</span><span class="p">(</span><span class="nx">a</span> <span class="nx">Int</span><span class="p">,</span> <span class="nx">b</span> <span class="nx">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="nx">Int</span><span class="p">,</span> <span class="nb">Error</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="22 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="23 "></span>      <span class="k">return</span> <span class="mf">0</span><span class="p">,</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;The value of a is zero&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span>    <span class="k">return</span> <span class="o">-</span><span class="nx">b</span><span class="o">/</span><span class="nx">a</span>
+<span class="linenos" data-linenos="27 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span><span class="p">}</span>
 </code></pre></div>
 <h2 id="the-toolchain">The toolchain</h2>
 <p>The compiler <a href="https://en.wikipedia.org/wiki/Compiler#Front_end">front-end</a> will be part of this project, and <a href="https://llvm.org/">LLVM</a>
@@ -893,6 +881,30 @@ will be used for the <a href="https://en.wikipedia.org/wiki/Compiler#Back_end">b
 <li><strong><a href="https://lld.llvm.org/">lld</a></strong>: Use the LLVM linker to link the native object file into an executable binary. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
 </ol>
 <p>Optionally, the 9th and 10th step can be replaced with <a href="https://llvm.org/docs/CommandGuide/lli.html">lli</a> to directly execute program from LLVM bitcode.</p>
+<h2 id="supported-platforms">Supported platforms</h2>
+<p>For now, we tend to support only popular platforms.</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Arch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macOS</td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>x86-64</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>x86-64</td>
+</tr>
+</tbody>
+</table>
 <h2 id="license">License</h2>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>Copyright © 2019-2021 VERDOÏA Laurent &lt;verdoialaurent@gmail.com&gt;
 <span class="linenos" data-linenos=" 2 "></span>
