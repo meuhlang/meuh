@@ -1,23 +1,5 @@
 # About MeuhLang
 
-!!! note ""
-    :warning: This section is still in progress
-
-Two lines about Meuh.
-
-Talk about:
-
-- features (generics, coroutines, garbage-collector, ...)
-- open source
-- List of projects (compiler, standart library)
-- platform support
-
-
-
-
-## Old documentation
-
-
 ## Introduction
 
 The goal of this project is to implement a programming language which can permit any
@@ -36,9 +18,10 @@ It is a general purpose [Turing Complete][Turing] language with at least those p
 - Procedural
 - Concurrent
 - Generic Programming
+- Garbage Collected
 - Reflection
 
-The next features will also be implemented :
+Thoses features are also planed to be implemented :
 
 - Thread multiplexing with [LLVM coroutines][coroutines] like in go with the [goroutine][goroutine]
 - [Anonymous functions][lambda] called as Lambda expressions
@@ -46,37 +29,36 @@ The next features will also be implemented :
 
 ## Source code example
 
+!!! hint ""
+    We should write a better example with at lease: Classes, Interfaces and Generics
+
 ```javascript
-package io.meuh.test;
+package io.github.meuhlang.example;
 
-import meuh.lang.Number;
-import meuh.lang.Integer;
+public interface PolynomialResolver {
+  // Solve the equation a*x+b=0
+  public func solve(a Int, b Int) -> (Int, Error)
+}
 
-public class IntegerCalculator extends Calculator implement PolynomialResolver {
-  public int main(const String[] &amp;argv) throws PolynomialException {
-    if (argv.length &lt; 1) {
-      System.stdout.println("Need arguments");
-      return 0;
+public class IntegerCalculator : PolynomialResolver {
+  public static func main(const String[] &argv) -> Int {
+    if argv.length < 3 {
+      System.stdout.println("Need arguments")
+      return 0
     }
-    return resolve(new Number[]{
-      Integer.decodeString(argv[1]),
-      Integer.decodeString(argv[2]),
-    }).toInt();
+
+    return resolve(
+      Int.decodeString(argv[1]),
+      Int.decodeString(argv[2]),
+    });
   }
 
-  protected Number resolve(const Number[] &amp;numbers) throws PolynomialException {
-    if (numbers.length != 2) {
-      throw new IllegalArgumentException("Only 2 numbers are expected, not: " + numbers.length);
-    }
-    return resolve(numbers[0], numbers[1]);
-  }
-
-  /** Solve a*x+b=0 */
-  public Integer polynome(const Integer &amp;a, const Integer &amp;b) throws PolynomialException {
+  override public func solve(a Int, b Int) -> (Int, Error) {
     if (a == 0) {
-      throw new PolynomialException("The value of a is zero");
+      return 0, Error("The value of a is zero")
     }
-    return -b/a;
+
+    return -b/a
   }
 }
 ```
@@ -100,6 +82,16 @@ Compilation phases per compilation unit :
 10. **[lld][lld]**: Use the LLVM linker to link the native object file into an executable binary. [^1]
 
 Optionally, the 9th and 10th step can be replaced with [lli][lli] to directly execute program from LLVM bitcode.
+
+## Supported platforms
+
+For now, we tend to support only popular platforms.
+
+|   OS    |  Arch  |
+|---------|--------|
+| macOS   | x86-64 |
+| Linux   | x86-64 |
+| Windows | x86-64 |
 
 ## License
 
