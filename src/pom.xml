@@ -64,6 +64,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
     <modules>
         <module>cli</module>
+        <module>core</module>
     </modules>
 
     <properties>
@@ -74,6 +75,9 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
 
         <!-- External dependencies version -->
+        <google-guava.version>30.1.1-jre</google-guava.version>
+        <freebuilder.version>2.7.0</freebuilder.version>
+        <testng.version>7.4.0</testng.version>
         <picocli.version>4.6.1</picocli.version>
 
         <!-- Plugin versions -->
@@ -99,11 +103,36 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
     <dependencyManagement>
         <dependencies>
+            <!-- Internal dependencies -->
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
             <!-- External dependencies -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google-guava.version}</version>
+            </dependency>
             <dependency>
                 <groupId>info.picocli</groupId>
                 <artifactId>picocli</artifactId>
                 <version>${picocli.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.inferred</groupId>
+                <artifactId>freebuilder</artifactId>
+                <version>${freebuilder.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

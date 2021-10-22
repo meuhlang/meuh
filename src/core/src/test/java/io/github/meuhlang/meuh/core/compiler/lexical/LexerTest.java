@@ -14,18 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-package io.github.meuhlang.meuh.cli;
+package io.github.meuhlang.meuh.core.compiler.lexical;
 
-import picocli.CommandLine;
+import org.testng.annotations.Test;
 
-@CommandLine.Command(name = "meuh")
-public class EntryPoint {
+import java.io.IOException;
+import java.util.Optional;
 
-    public static void main(String... args) {
-        final var cmd = new CommandLine(new EntryPoint())
-                .addSubcommand("lexer", new MeuhLexer())
-                ;
-        final int exitCode = cmd.execute(args);
-        System.exit(exitCode);
+import static org.testng.Assert.*;
+
+public class LexerTest {
+
+    @Test
+    public void testEmpty() throws IOException {
+        final var lexer = new Lexer("");
+        assertEquals(lexer.fetchToken(), Optional.empty());
     }
+
+    @Test
+    public void testDummy() throws IOException {
+        final var lexer = new Lexer("one two");
+
+        assertEquals(lexer.fetchToken(), Optional.of("one"));
+        assertEquals(lexer.fetchToken(), Optional.of("two"));
+        assertEquals(lexer.fetchToken(), Optional.empty());
+   }
+
 }
