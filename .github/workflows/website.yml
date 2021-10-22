@@ -7,20 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Install mkdocs
-        run: |
-          pip install \
-            mkdocs-material==7.1.8 \
-            mkdocs==1.2
       - name: Build
-        run: |
-          mkdocs build \
-            --clean \
-            --config-file ./site/mkdocs.yml \
-            --strict
+        uses: meuhlang/mkdocs-docker@v1.2.3-3
+        with:
+          strict: true
+          configfile: ./site/mkdocs.yml
       - name: Package website
         run: tar -cvzf website.tar -C site/site .
       - uses: actions/upload-artifact@v2

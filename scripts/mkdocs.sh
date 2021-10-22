@@ -3,35 +3,28 @@
 set -o errexit
 set -o nounset
 
-_container() {
-  if comand -v docker > /dev/null 2>&1; then
-    docker "$@"
-  elif command -v podman > /dev/null 2>&1; then
-    podman "$@"
-  else
-    echo "No linux containers implementations found." >&2
-    return 1
-  fi
-}
-
 main() {
   cd "$(dirname "$0")/.."
 
-  if command -v mkdocs > /dev/null 2>&1; then
-    cd site
-    exec mkdocs "$@"
+  set -- lvjp/mkdocs:v1.2.3-3 mkdocs "$@"
+
+  if [ "${3:-}" = "serve" ]; then
+    os=$(docker version --format '{{.Client.Os}}')
+    case "${os}" in
+      darwin) set -- --publish 8000:8000 "$@" --dev-addr 0.0.0.0:8000;;
+      linux) set -- --network host "$@";;
+      *)
+        echo "Unsupported os: ${os}"
+        exit 1
+        ;;
+    esac
   fi
 
-  _container build \
-    --tag local/meuh/mkdocs:latest \
-    - < ./scripts/mkdocs.Dockerfile
-
-  _container run \
-    --mount "type=bind,src=${PWD}/site,dst=/work,z" \
+  docker run \
+    --mount "type=bind,src=${PWD}/site,dst=/work,ro" \
     --workdir /work \
-    --network host \
-    local/meuh/mkdocs:latest \
-    mkdocs "$@"
+    --rm \
+    "$@"
 }
 
 main "$@"
