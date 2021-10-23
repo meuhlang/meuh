@@ -21,7 +21,7 @@ main() {
   fi
 
   docker run \
-    --mount "type=bind,src=${PWD}/site,dst=/work,ro" \
+    --mount "type=bind,src=${PWD}/site,dst=/work" \
     --workdir /work \
     --rm \
     "$@"
