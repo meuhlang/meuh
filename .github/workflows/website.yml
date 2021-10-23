@@ -23,12 +23,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: build
     steps:
-      - uses: ruby/setup-ruby@v1.84.0
-        with:
-          ruby-version: 3.0.1
-      - name: Install html-proofer
-        run: gem install html-proofer --version "=3.19.1"
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v2.0.10
         with:
           name: website
       - name: Unpack the website
@@ -36,11 +31,12 @@ jobs:
           mkdir -p website/meuh
           tar -xzvf website.tar.gz -C website/meuh
       - name: Run html-proofer
-        run: |
-          htmlproofer ./website \
-            --allow-hash-href \
-            --enforce-https \
-            --url-ignore '/fonts.gstatic.com/'
+        uses: meuhlang/html-proofer-docker@v3.19.1-0
+        with:
+          path: ./website
+          allow_hash_href: 'true'
+          enforce_https: 'true'
+          url_ignore: '/fonts.gstatic.com/'
 
   deploy:
     runs-on: ubuntu-20.04
