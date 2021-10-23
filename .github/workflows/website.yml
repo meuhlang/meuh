@@ -4,9 +4,9 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.5
       - name: Build
         uses: meuhlang/mkdocs-docker@v1.2.3-3
         with:
@@ -14,16 +14,16 @@ jobs:
           configfile: ./site/mkdocs.yml
       - name: Package website
         run: tar -cvzf website.tar.gz -C site/site .
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2.2.4
         with:
           name: website
           path: website.tar.gz
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: build
     steps:
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1.84.0
         with:
           ruby-version: 3.0.1
       - name: Install html-proofer
@@ -43,12 +43,12 @@ jobs:
             --url-ignore '/fonts.gstatic.com/'
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: [build, test]
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/checkout@v2.3.5
+      - uses: actions/download-artifact@v2.0.10
         with:
           name: website
       - name: Unpack the website
