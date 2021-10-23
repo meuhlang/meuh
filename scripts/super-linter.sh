@@ -24,7 +24,7 @@ main() {
     --env VALIDATE_JAVASCRIPT_ES=false \
     --env VALIDATE_JAVASCRIPT_STANDARD=false \
     --mount "type=bind,src=${PWD},dst=/tmp/lint,z" \
-    github/super-linter:v4
+    github/super-linter:v4.8.1
 }
 
 main "$@"
