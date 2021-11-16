@@ -65,8 +65,8 @@ public class IntegerCalculator : PolynomialResolver {
 
 ## The toolchain
 
-The compiler [front-end][front-end] will be part of this project, and [LLVM][llvm]
-will be used for the [back-end][back-end].
+The compiler [frontend][frontend] will be part of this project, and [LLVM][llvm]
+will be used for the [backend][backend].
 
 Compilation phases per compilation unit :
 
@@ -115,9 +115,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 [^1]: On macOS, only the host linker is supported
 
 [ast]: https://en.wikipedia.org/wiki/Abstract_syntax_tree
-[back-end]: https://en.wikipedia.org/wiki/Compiler#Back_end
+[backend]: https://en.wikipedia.org/wiki/Compiler#Back_end
 [coroutines]: https://llvm.org/docs/Coroutines.html
-[front-end]: https://en.wikipedia.org/wiki/Compiler#Front_end
+[frontend]: https://en.wikipedia.org/wiki/Compiler#Front_end
 [goroutine]: https://golang.org/doc/effective_go.html#goroutines
 [kiss]: https://en.wikipedia.org/wiki/KISS_principle
 [lambda]: https://en.wikipedia.org/wiki/Anonymous_function
