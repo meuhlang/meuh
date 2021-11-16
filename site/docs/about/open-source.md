@@ -18,5 +18,5 @@ The Meuh language, supporting libraries and tools are published under the [GPL v
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-More information about how the community work ca be found in the [community section](../../community/) of this website.  
+More information about how the community work ca be found in the [community section](../../community/) of this site.  
 And as always, everybody is welcome !
