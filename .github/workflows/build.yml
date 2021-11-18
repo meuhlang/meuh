@@ -1,0 +1,56 @@
+name: Java Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - name: Set up JDK
+        uses: actions/setup-java@v2.3.1
+        with:
+          distribution: "temurin"
+          java-version: "11.0.13+8"
+          cache: "maven"
+      - name: Build with Maven
+        run: mvn --show-version clean verify
+      - name: Install shared-resources
+        run: mvn --projects shared-resources install
+      - name: Build website
+        run: mvn site:site site:stage
+      - name: Archive maven website
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: Maven Website
+          path: target/staging
+          if-no-files-found: error
+          retention-days: 1
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          branch: gh-pages
+          folder: target/staging
+          target-folder: maven
+          git-config-name: ${{ github.event.head_commit.author.name }}
+
+  native:
+    name: GraalVM Native Image
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: ayltai/setup-graalvm@v1
+        with:
+          java-version: 11
+          graalvm-version: 21.3.0
+          native-image: true
+      - name: Build with Maven
+        run: mvn --show-version clean package -Pgraalvm-native
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: GraalVM Native Image
+          path: cli/target/meuh
+          if-no-files-found: error
+          retention-days: 1

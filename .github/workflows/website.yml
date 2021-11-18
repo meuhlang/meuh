@@ -51,6 +51,8 @@ jobs:
         run: |
           mkdir website
           tar -xzvf website.tar.gz -C website
+      - name: Remove the maven place holder
+        run: rm website/maven/index.html
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
