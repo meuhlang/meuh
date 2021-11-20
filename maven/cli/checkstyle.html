@@ -72,7 +72,7 @@
 <tr class="b">
 <td>3</td>
 <td>0</td>
-<td>23</td>
+<td>4</td>
 <td>0</td></tr></table></section><section>
 <h2><a name="Files"></a>Files</h2>
 <table border="0" class="bodyTable">
@@ -89,7 +89,7 @@
 <tr class="a">
 <td><a href="#io.github.meuhlang.meuh.cli.DummyCommandTest.java">io/github/meuhlang/meuh/cli/DummyCommandTest.java</a></td>
 <td>0</td>
-<td>20</td>
+<td>1</td>
 <td>0</td></tr>
 <tr class="b">
 <td><a href="#io.github.meuhlang.meuh.cli.EntryPoint.java">io/github/meuhlang/meuh/cli/EntryPoint.java</a></td>
@@ -104,36 +104,6 @@
 <th>Violations</th>
 <th>Severity</th></tr>
 <tr class="b">
-<td>header</td>
-<td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_header.html#RegexpHeader">RegexpHeader</a>
-<ul>
-<li>fileExtensions: <code>&quot;java&quot;</code></li>
-<li>headerFile: <code>&quot;target/checkstyle-header.txt&quot;</code></li></ul></td>
-<td>1</td>
-<td><figure><img src="images/icon_error_sml.gif" alt="" /></figure>&#160;Error</td></tr>
-<tr class="a">
-<td>imports</td>
-<td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_imports.html#CustomImportOrder">CustomImportOrder</a>
-<ul>
-<li>separateLineBetweenGroups: <code>&quot;true&quot;</code></li>
-<li>sortImportsInGroupAlphabetically: <code>&quot;true&quot;</code></li>
-<li>customImportOrderRules: <code>&quot;STATIC###THIRD_PARTY_PACKAGE&quot;</code></li>
-<li>tokens: <code>&quot;IMPORT, STATIC_IMPORT, PACKAGE_DEF&quot;</code></li></ul></td>
-<td>4</td>
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td></tr>
-<tr class="b">
-<td>indentation</td>
-<td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_indentation.html#Indentation">Indentation</a>
-<ul>
-<li>throwsIndent: <code>&quot;4&quot;</code></li>
-<li>arrayInitIndent: <code>&quot;2&quot;</code></li>
-<li>caseIndent: <code>&quot;2&quot;</code></li>
-<li>basicOffset: <code>&quot;2&quot;</code></li>
-<li>braceAdjustment: <code>&quot;2&quot;</code></li>
-<li>lineWrappingIndentation: <code>&quot;4&quot;</code></li></ul></td>
-<td>12</td>
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td></tr>
-<tr class="a">
 <td>javadoc</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#MissingJavadocMethod">MissingJavadocMethod</a>
 <ul>
@@ -143,7 +113,7 @@
 <li>allowedAnnotations: <code>&quot;Override, Test&quot;</code></li></ul></td>
 <td>1</td>
 <td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td></tr>
-<tr class="b">
+<tr class="a">
 <td></td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#MissingJavadocType">MissingJavadocType</a>
 <ul>
@@ -151,16 +121,7 @@
 <li>excludeScope: <code>&quot;nothing&quot;</code></li>
 <li>tokens: <code>&quot;CLASS_DEF, INTERFACE_DEF, ENUM_DEF,                       RECORD_DEF, ANNOTATION_DEF&quot;</code></li></ul></td>
 <td>3</td>
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td></tr>
-<tr class="a">
-<td>sizes</td>
-<td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_sizes.html#LineLength">LineLength</a>
-<ul>
-<li>fileExtensions: <code>&quot;java&quot;</code></li>
-<li>max: <code>&quot;100&quot;</code></li>
-<li>ignorePattern: <code>&quot;^package.*|^import.*|a href|href|http://|https://|ftp://&quot;</code></li></ul></td>
-<td>2</td>
-<td><figure><img src="images/icon_error_sml.gif" alt="" /></figure>&#160;Error</td></tr></table></section><section>
+<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td></tr></table></section><section>
 <h2><a name="Details"></a>Details</h2><section>
 <h3 id="io.github.meuhlang.meuh.cli.DummyCommand.java">io/github/meuhlang/meuh/cli/DummyCommand.java</h3>
 <table border="0" class="bodyTable">
@@ -186,139 +147,25 @@
 <th>Line</th></tr>
 <tr class="a">
 <td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>header</td>
-<td>RegexpHeader</td>
-<td>Line does not match expected header line of '^/\*$'.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L3">3</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>imports</td>
-<td>CustomImportOrder</td>
-<td>Import statement for 'com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemErr' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L6">6</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>imports</td>
-<td>CustomImportOrder</td>
-<td>Import statement for 'com.github.stefanbirkner.systemlambda.SystemLambda.tapSystemOutNormalized' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L7">7</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>imports</td>
-<td>CustomImportOrder</td>
-<td>Import statement for 'org.testng.Assert.assertEquals' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L8">8</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>imports</td>
-<td>CustomImportOrder</td>
-<td>Import statement for 'org.testng.Assert.assertTrue' is in the wrong order. Should be in the 'STATIC' group, expecting not assigned imports on this line.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L9">9</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
 <td>javadoc</td>
 <td>MissingJavadocType</td>
 <td>Missing a Javadoc comment.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L11">11</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L13">13</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L15">15</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>sizes</td>
-<td>LineLength</td>
-<td>Line is longer than 100 characters (found 102).</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L16">16</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'block' child has incorrect indentation level 12, expected level should be 10.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L16">16</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'block' child has incorrect indentation level 12, expected level should be 10.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L17">17</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L20">20</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L21">21</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def modifier' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L23">23</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L25">25</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>sizes</td>
-<td>LineLength</td>
-<td>Line is longer than 100 characters (found 108).</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L26">26</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'block' child has incorrect indentation level 12, expected level should be 10.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L26">26</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'block' child has incorrect indentation level 12, expected level should be 10.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L27">27</a></td></tr>
-<tr class="a">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def' child has incorrect indentation level 8, expected level should be 4.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L30">30</a></td></tr>
-<tr class="b">
-<td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
-<td>indentation</td>
-<td>Indentation</td>
-<td>'method def rcurly' has incorrect indentation level 4, expected level should be 2.</td>
-<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L31">31</a></td></tr></table></section><section>
+<td><a href="./xref/io/github/meuhlang/meuh/cli/DummyCommandTest.html#L26">26</a></td></tr></table></section><section>
 <h3 id="io.github.meuhlang.meuh.cli.EntryPoint.java">io/github/meuhlang/meuh/cli/EntryPoint.java</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
 <td>javadoc</td>
 <td>MissingJavadocType</td>
 <td>Missing a Javadoc comment.</td>
 <td><a href="./xref/io/github/meuhlang/meuh/cli/EntryPoint.html#L20">20</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td><figure><img src="images/icon_warning_sml.gif" alt="" /></figure>&#160;Warning</td>
 <td>javadoc</td>
 <td>MissingJavadocMethod</td>
