@@ -18,10 +18,12 @@ package io.github.meuhlang.meuh.core;
 import com.google.common.collect.ImmutableList;
 import org.inferred.freebuilder.FreeBuilder;
 
+/** A simple dummy data. */
 @FreeBuilder
 public interface DummyData {
 
   ImmutableList<String> data();
 
+  /** The famous builder. */
   class Builder extends DummyData_Builder {}
 }

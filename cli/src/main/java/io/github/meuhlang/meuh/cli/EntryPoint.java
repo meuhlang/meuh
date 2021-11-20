@@ -17,10 +17,16 @@ package io.github.meuhlang.meuh.cli;
 
 import picocli.CommandLine;
 
+/** The entry point of the meuh command. */
 @CommandLine.Command(name = "meuh")
 public class EntryPoint {
 
-  public static void main(String... args) {
+  /**
+   * Entry point of the meuh command.
+   *
+   * @param args command line arguments
+   */
+  public static void main(final String... args) {
     final var cmd = buildCommandLine();
     final int exitCode = cmd.execute(args);
     System.exit(exitCode);

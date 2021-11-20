@@ -18,6 +18,9 @@ package io.github.meuhlang.meuh.cli;
 import io.github.meuhlang.meuh.core.DummyData;
 import picocli.CommandLine;
 
+/**
+ * A really simple dummy command.
+ */
 @CommandLine.Command
 public class DummyCommand implements Runnable {
 
