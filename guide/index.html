@@ -1,0 +1,1568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The meuh programming language">
+      
+      
+      
+        <meta name="author" content="VERDOÏA Laurent <verdoialaurent@gmail.com>">
+      
+      
+        <link rel="canonical" href="https://meuhlang.github.io/meuh/guide/">
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>A MeuhLang Tour - MeuhLang</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+  
+
+
+  
+
+  
+
+
+  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-JTM3PRWNW6"),document.addEventListener("DOMContentLoaded",function(){"undefined"!=typeof location$&&location$.subscribe(function(t){gtag("config","G-JTM3PRWNW6",{page_path:t.pathname})})})</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTM3PRWNW6"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#a-meuhlang-tour" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MeuhLang" class="md-header__button md-logo" aria-label="MeuhLang" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 18a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.5m3 0a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.5M10 11a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m4 7c0 2.21-2.69 4-6 4s-6-1.79-6-4c0-.9.45-1.73 1.2-2.4-.75-1-1.2-2.25-1.2-3.6l.12-1.22c-.54.15-1.19.15-1.72 0-1.02-.28-2.56-1.43-2.33-2.23.23-.8 2.14-.95 3.16-.65.59.17 1.22.6 1.59 1.06l.57-.81C6.79 7.05 7 4 10 3l-.09.14c-.28.44-1 1.83-.24 3.33a6.02 6.02 0 0 1 4.66 0c.76-1.5.04-2.89-.24-3.33L14 3c3 1 3.21 4.05 2.61 5.15l.57.81c.37-.46 1-.89 1.59-1.06 1.02-.3 2.93-.15 3.16.65.23.8-1.31 1.95-2.33 2.23-.53.15-1.18.15-1.72 0L18 12c0 1.35-.45 2.6-1.2 3.6.75.67 1.2 1.5 1.2 2.4m-6-2c-2.21 0-4 .9-4 2s1.79 2 4 2 4-.9 4-2-1.79-2-4-2m0-2c1.12 0 2.17.21 3.07.56.58-.69.93-1.56.93-2.56a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1 .35 1.87.93 2.56.9-.35 1.95-.56 3.07-.56m2.09-10.86z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MeuhLang
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              A MeuhLang Tour
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../started/" class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tools/" class="md-tabs__link">
+        Tools
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Programming Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../stdlib/" class="md-tabs__link">
+        Standard Library
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../community/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../maven/" class="md-tabs__link">
+      Maven
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MeuhLang" class="md-nav__button md-logo" aria-label="MeuhLang" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 18a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.5m3 0a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.5M10 11a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m4 0a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m4 7c0 2.21-2.69 4-6 4s-6-1.79-6-4c0-.9.45-1.73 1.2-2.4-.75-1-1.2-2.25-1.2-3.6l.12-1.22c-.54.15-1.19.15-1.72 0-1.02-.28-2.56-1.43-2.33-2.23.23-.8 2.14-.95 3.16-.65.59.17 1.22.6 1.59 1.06l.57-.81C6.79 7.05 7 4 10 3l-.09.14c-.28.44-1 1.83-.24 3.33a6.02 6.02 0 0 1 4.66 0c.76-1.5.04-2.89-.24-3.33L14 3c3 1 3.21 4.05 2.61 5.15l.57.81c.37-.46 1-.89 1.59-1.06 1.02-.3 2.93-.15 3.16.65.23.8-1.31 1.95-2.33 2.23-.53.15-1.18.15-1.72 0L18 12c0 1.35-.45 2.6-1.2 3.6.75.67 1.2 1.5 1.2 2.4m-6-2c-2.21 0-4 .9-4 2s1.79 2 4 2 4-.9 4-2-1.79-2-4-2m0-2c1.12 0 2.17.21 3.07.56.58-.69.93-1.56.93-2.56a4 4 0 0 0-4-4 4 4 0 0 0-4 4c0 1 .35 1.87.93 2.56.9-.35 1.95-.56 3.07-.56m2.09-10.86z"/></svg>
+
+    </a>
+    MeuhLang
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About MeuhLang
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/open-source/" class="md-nav__link">
+        Open Source Declaration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../started/" class="md-nav__link">
+        Getting started with MeuhLang
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tools" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        MeuhLang Tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Programming Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Programming Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          A MeuhLang Tour
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        A MeuhLang Tour
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-first-program" class="md-nav__link">
+    Your first program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-values" class="md-nav__link">
+    Simple Values
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-and-mutability" class="md-nav__link">
+    Variables and Mutability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-inference" class="md-nav__link">
+    Type inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting" class="md-nav__link">
+    Casting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-text-formatting" class="md-nav__link">
+    Simple Text formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-and-slice" class="md-nav__link">
+    Array and Slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-values" class="md-nav__link">
+    Optional values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional" class="md-nav__link">
+    Conditional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    Chaining
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-if-conditional" class="md-nav__link">
+    The if conditional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-for-in-loop" class="md-nav__link">
+    The for-in loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-while-loop" class="md-nav__link">
+    The while loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-repeat-while-loop" class="md-nav__link">
+    The repeat-while loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-select-operation" class="md-nav__link">
+    The select operation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects-and-classes" class="md-nav__link">
+    Objects and Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generics" class="md-nav__link">
+    Generics
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        MeuhLang syntax
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Standard Library
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Standard Library" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Standard Library
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stdlib/" class="md-nav__link">
+        The MeuhLang Standard Library
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Community" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        The MeuhLang Community
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../maven/" class="md-nav__link">
+        Maven
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-first-program" class="md-nav__link">
+    Your first program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-values" class="md-nav__link">
+    Simple Values
+  </a>
+  
+    <nav class="md-nav" aria-label="Simple Values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-and-mutability" class="md-nav__link">
+    Variables and Mutability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    Constants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-inference" class="md-nav__link">
+    Type inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting" class="md-nav__link">
+    Casting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simple-text-formatting" class="md-nav__link">
+    Simple Text formatting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#array-and-slice" class="md-nav__link">
+    Array and Slice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-values" class="md-nav__link">
+    Optional values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditional" class="md-nav__link">
+    Conditional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    Chaining
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav" aria-label="Control Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-if-conditional" class="md-nav__link">
+    The if conditional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-for-in-loop" class="md-nav__link">
+    The for-in loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-while-loop" class="md-nav__link">
+    The while loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-repeat-while-loop" class="md-nav__link">
+    The repeat-while loop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-select-operation" class="md-nav__link">
+    The select operation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    Structures
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objects-and-classes" class="md-nav__link">
+    Objects and Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    Enumerations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    Error Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generics" class="md-nav__link">
+    Generics
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="a-meuhlang-tour">A MeuhLang Tour</h1>
+<div class="admonition note">
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> This section is still in progress</p>
+</div>
+<h2 id="your-first-program">Your first program</h2>
+<p>This is the revisited traditional first program :</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Every program entry point should start with the <code>main()</code> function.
+You don't need to write semicolons at the end of every statement.</p>
+<p>This tour gives you enough information to start writing software in Meuh
+and let you understand the spirit of this language.</p>
+<h2 id="simple-values">Simple Values</h2>
+<h3 id="variables-and-mutability">Variables and Mutability</h3>
+<p>By default all variables are <strong>immutable</strong>.</p>
+<p>This means that once you assign a value to an immutable variable,
+you cannot change the value in a later assignment.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">var</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="linenos" data-linenos="2 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="linenos" data-linenos="4 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>The above example cannot compile since on line 3, we are trying to set another value to <code>x</code>.</p>
+<p>In way to take off the <strong>immutable</strong> facet of the variable, we can you the <code>mut</code> keyword.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">var</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="linenos" data-linenos="2 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"></span>
+<span class="linenos" data-linenos="4 "></span><span class="n">println</span><span class="p">(</span><span class="s">&quot;The value of x is %{x}.&quot;</span><span class="p">)</span><span class="w"></span>
+<span class="linenos" data-linenos="5 "></span><span class="c1">// Prints:</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">// The value of x is 5.</span>
+<span class="linenos" data-linenos="7 "></span><span class="c1">// The value of x is 6.</span>
+</code></pre></div>
+<h3 id="constants">Constants</h3>
+<p>Use <code>const</code> to make a constant and <code>var</code> to make a variable.
+The value of a constant doesn't need to be known at compile tile, but you must assign
+it a value at declaration time.<br />
+This means you can use constants to name a wheel known value that you determine once but use in many places.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">const</span><span class="w"> </span><span class="n">myConstant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="w"></span>
+<span class="linenos" data-linenos="2 "></span><span class="n">var</span><span class="w"> </span><span class="n">mut</span><span class="w"> </span><span class="n">myVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="w"></span>
+<span class="linenos" data-linenos="3 "></span><span class="n">myVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">24</span><span class="w"></span>
+</code></pre></div>
+<h3 id="type-inference">Type inference</h3>
+<p>A constant or variable must have the same type as the value you want to assign to.
+If you do not write the type, the compiler will infer its type.
+When the initial declaration or assignment doesn't provide enough information,
+specify the type by writing it after the variable, separated by a colon.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="n">const</span> <span class="n">implicitInteger</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="2 "></span><span class="n">const</span> <span class="n">implicitDouble</span> <span class="p">=</span> <span class="mf">42.0</span>
+<span class="linenos" data-linenos="3 "></span><span class="n">const</span> <span class="n">explicitDouble</span><span class="p">:</span> <span class="n">double</span> <span class="p">=</span> <span class="mi">42</span>
+</code></pre></div>
+<p>On the above example, without an explicit type declaration <code>double</code>,
+the constant <code>explicitDouble</code> would have been inferred as an integer.</p>
+<h3 id="casting">Casting</h3>
+<p>With the type safety policy in MeuhLang, value are never implicitly converted to another type.
+You should use an explicit casting operator whenever a conversion is needed.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">text</span> <span class="p">=</span> <span class="s">&quot;Your age is: &quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">age</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">var</span> <span class="nv">dialog</span> <span class="p">=</span> <span class="n">text</span> <span class="o">+</span> <span class="n">string</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="simple-text-formatting">Simple Text formatting</h3>
+<p>A simple way to formatting is to directly insert value inside a string, enclosed inside a <code>%{}</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">age</span> <span class="p">=</span> <span class="mi">42</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">yearsText</span> <span class="p">=</span> <span class="s">&quot;You are %{age} years old&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">var</span> <span class="nv">monthText</span> <span class="p">=</span> <span class="s">&quot;You are %{age*12} months old&quot;</span>
+<span class="linenos" data-linenos="4 "></span><span class="kd">var</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">&quot;John Doe&quot;</span>
+<span class="linenos" data-linenos="5 "></span><span class="kd">var</span> <span class="nv">greeting</span> <span class="p">=</span> <span class="s">&quot;Hello, my name is </span><span class="se">\&quot;</span><span class="s">%{name}</span><span class="se">\&quot;</span><span class="s">.</span><span class="se">\n</span><span class="s">How are you ?&quot;</span>
+</code></pre></div>
+<p>Multiple line text can be written within the three double quotation marks <code>"""</code>.
+To keep source code well-formed, indentation of the text is removed, as long as it matches the
+indentation of the closing three double quotation marks.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">name</span> <span class="p">=</span> <span class="s">&quot;John Doe&quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">multilineGreeting</span> <span class="p">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="s">Hello,my name is &quot;</span><span class="o">%</span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="s">&quot;.</span>
+<span class="linenos" data-linenos="4 "></span><span class="s">How are you ?</span>
+<span class="linenos" data-linenos="5 "></span><span class="s">&quot;&quot;&quot;</span>
+</code></pre></div>
+<p>On the above examples, <code>greeting</code> and <code>multilineGreeting</code> have the same value.</p>
+<h3 id="array-and-slice">Array and Slice</h3>
+<p>Both <strong>array</strong> and <strong>slice</strong> permit keeping data indexed with a positive continuous set of
+integer, starting at 0.
+Array size must be defined during declaration when this is not needed for slice.
+This permit slice to growth and shrink on demand at runtime.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">emptyArray</span><span class="p">:</span> <span class="p">[</span><span class="mi">42</span><span class="p">]</span><span class="n">string</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">emptySlice</span><span class="p">:</span> <span class="p">[]</span><span class="n">string</span>
+<span class="linenos" data-linenos="3 "></span><span class="kd">var</span> <span class="nv">populatedArray</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="n">string</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Air&quot;</span><span class="p">,</span> <span class="s">&quot;Fire&quot;</span><span class="p">,</span> <span class="s">&quot;Water&quot;</span><span class="p">]</span>
+<span class="linenos" data-linenos="4 "></span><span class="kd">var</span> <span class="nv">mut</span> <span class="n">populatedSlice</span> <span class="p">=</span> <span class="p">[</span><span class="s">&quot;Air&quot;</span><span class="p">,</span> <span class="s">&quot;Fire&quot;</span><span class="p">]</span>
+<span class="linenos" data-linenos="5 "></span><span class="n">populatedSlice</span> <span class="o">+=</span> <span class="s">&quot;Water&quot;</span>
+<span class="linenos" data-linenos="6 "></span><span class="kd">var</span> <span class="nv">remark</span> <span class="p">=</span> <span class="s">&quot;populatedArray length is %{populatedArray.length()}&quot;</span>
+</code></pre></div>
+<p>On the above example, after the execution, <code>populatedArray</code> and <code>populatedSlice</code> contains the same
+values.</p>
+<h3 id="optional-values">Optional values</h3>
+<p>Optional values are immutables.<br />
+An optional either contains a value or contains <code>nil</code> to indicate that a value is missing.</p>
+<p>The question mark <code>?</code> operator permit to declare a type as optional.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalString</span> <span class="n">string</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;The optional value&quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="kd">var</span> <span class="nv">emptyOptionalInteger</span> <span class="n">int</span><span class="p">?</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">RGBColor</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="kd">public</span> <span class="kd">var</span> <span class="nv">red</span><span class="p">:</span> <span class="n">int8</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="kd">public</span> <span class="kd">var</span> <span class="nv">green</span><span class="p">:</span> <span class="n">int8</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="kd">public</span> <span class="kd">var</span> <span class="nv">blue</span><span class="p">:</span> <span class="n">int8</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">red</span> <span class="n">int8</span><span class="p">,</span> <span class="n">green</span> <span class="n">int8</span><span class="p">,</span> <span class="n">blue</span> <span class="n">int8</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">red</span> <span class="p">=</span> <span class="n">red</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">green</span> <span class="p">=</span> <span class="n">green</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">blue</span> <span class="p">=</span> <span class="n">blue</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="kd">var</span> <span class="nv">yellow</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos" data-linenos="14 "></span><span class="kd">var</span> <span class="nv">cyan</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="linenos" data-linenos="15 "></span><span class="kd">var</span> <span class="nv">magenta</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="kd">var</span> <span class="nv">optionalColor</span><span class="p">:</span> <span class="n">RGBColor</span><span class="p">?</span> <span class="p">=</span> <span class="n">yellow</span>
+<span class="linenos" data-linenos="18 "></span><span class="kd">var</span> <span class="nv">optionalMutableColor</span><span class="p">:</span> <span class="n">mut</span> <span class="n">RGBColor</span><span class="p">?</span> <span class="p">=</span> <span class="n">RGBColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="linenos" data-linenos="19 "></span><span class="n">optionalMutableColor</span><span class="p">?.</span><span class="n">red</span> <span class="p">=</span> <span class="mi">42</span>
+</code></pre></div>
+<p>You can use the <code>??</code> to use a default value when the value is missing.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+<span class="linenos" data-linenos="2 "></span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hello: &#39;%{optionalName ?? &quot;</span><span class="n">No</span> <span class="n">Body</span><span class="p">...</span><span class="s">&quot;}&#39;&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="c1">// Prints &quot;Hello: No Body...&quot;</span>
+</code></pre></div>
+<p>You can use the <code>!</code> to raise an error if the value is missing.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+<span class="linenos" data-linenos="2 "></span><span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hello: &#39;%{optionalName!}&#39;&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="3 "></span><span class="c1">// Error is raised</span>
+</code></pre></div>
+<h3 id="conditional">Conditional</h3>
+<p>This can be usefull to be used as condition.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">serverResponse</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nv">userName</span> <span class="p">=</span> <span class="n">serverResponse</span><span class="p">?</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Username: %{userName}&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;User not found&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="chaining">Chaining</h3>
+<p>You can also take leverage of chaining.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">serverResponse</span><span class="p">:</span> <span class="n">ServerResponse</span><span class="p">?</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nv">adminId</span> <span class="p">=</span> <span class="n">serverResponse</span><span class="p">?</span><span class="n">group</span><span class="p">?</span><span class="n">admin</span><span class="p">?</span><span class="n">id</span><span class="p">?</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Admin user id: %{adminId}&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="bp">println</span><span class="p">(</span><span class="s">&quot;Admin ID not found&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="control-flow">Control Flow</h2>
+<p>Use <code>if</code> and <code>switch</code> to make conditionals, use <code>for-in</code>, <code>while</code>, and <code>repeat-while</code> to make loops,
+use <code>select</code> to wait for <code>send</code> or <code>receive</code> operations.
+Parentheses around the condition or loop variable are optional. Braces around the body are required.</p>
+<h3 id="the-if-conditional">The <code>if</code> conditional</h3>
+<p>The <code>if</code> conditional permit to execute one set of instructions or the other depending on the given
+condition.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">hour</span> <span class="p">=</span> <span class="mi">9</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="mi">12</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Morning&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Afternoon&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="c1">// Prints &quot;Morning&quot;</span>
+</code></pre></div>
+You can use <code>if</code> and <code>var</code> together to restain variable scope to the body of the <code>if</code> statement.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">func</span> <span class="nx">getName</span><span class="p">()</span> <span class="o">-</span><span class="p">&gt;</span> <span class="nx">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="k">return</span> <span class="s">&quot;John Doe&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nx">name</span> <span class="p">=</span> <span class="nx">getName</span><span class="p">();</span> <span class="p">!</span><span class="nx">name</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="nb">print</span><span class="p">(</span><span class="s">&quot;Hello %{name}&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="c1">// Prints &quot;Hello John Doe&quot;</span>
+</code></pre></div>
+<p>You can use <code>if</code> to work with optionals.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">optionalName</span><span class="p">:</span> <span class="nb">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;John Doe&quot;</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">if</span> <span class="kd">var</span> <span class="nv">name</span> <span class="p">=</span> <span class="n">optionalName</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="bp">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="c1">// Prints John Doe</span>
+</code></pre></div>
+<h3 id="the-for-in-loop">The <code>for-in</code> loop</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">var</span> <span class="nv">interestingNumbers</span> <span class="p">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="s">&quot;Prime&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="s">&quot;Fibonacci&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="s">&quot;Square&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">]</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kd">var</span> <span class="nv">largest</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">for</span> <span class="p">(</span><span class="kc">_</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span> <span class="k">in</span> <span class="n">interestingNumbers</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="n">numbers</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="n">largest</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>            <span class="n">largest</span> <span class="p">=</span> <span class="n">number</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="bp">print</span><span class="p">(</span><span class="n">largest</span><span class="p">)</span>
+<span class="linenos" data-linenos="15 "></span><span class="c1">// Prints &quot;25&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">total</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mf">0.</span><span class="p">.&lt;</span><span class="mi">4</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="bp">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">// Prints &quot;6&quot;</span>
+</code></pre></div>
+<h3 id="the-while-loop">The <code>while</code> loop</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">n</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">n</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="bp">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">// Prints &quot;128&quot;</span>
+</code></pre></div>
+<h3 id="the-repeat-while-loop">The <code>repeat-while</code> loop</h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">var</span> <span class="nv">n</span> <span class="p">=</span> <span class="mi">2</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">repeat</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">n</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">}</span> <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">100</span>
+<span class="linenos" data-linenos="5 "></span><span class="bp">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="linenos" data-linenos="6 "></span><span class="c1">// Prints &quot;128&quot;</span>
+</code></pre></div>
+<h3 id="the-select-operation">The <code>select</code> operation</h3>
+<p>Please refer to the spirit of the <a href="https://golang.org/ref/spec#Select_statements">select</a> statement in Go.</p>
+<h2 id="functions">Functions</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">func</span> <span class="nf">noReturnValue</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="bp">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="kd">func</span> <span class="nf">withReturnValue</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">return</span> <span class="s">&quot;Hello&quot;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="kd">func</span> <span class="nf">multipleReturnValues</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="nb">String</span><span class="p">,</span> <span class="n">int</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="k">return</span> <span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">5</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="kd">func</span> <span class="nf">withArgument</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="k">return</span> <span class="s">&quot;Hello %{name}&quot;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="n">withArgument</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;John&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="kd">func</span> <span class="nf">unnamedArgument</span><span class="p">(</span><span class="kc">_</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="k">return</span> <span class="s">&quot;Hello %{name}&quot;</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="n">unnamedArgument</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">func</span> <span class="nf">constExpression</span><span class="p">()</span> <span class="n">constexpr</span> <span class="p">-&gt;</span> <span class="n">int</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="k">return</span> <span class="mf">3.0</span> <span class="o">+</span> <span class="mf">0.14</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="n">const</span> <span class="n">PI</span> <span class="p">=</span> <span class="n">constExpression</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">func</span> <span class="nf">makeIncrementer</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="p">((</span><span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="kd">func</span> <span class="nf">addOne</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Int</span> <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">number</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">return</span> <span class="n">addOne</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="kd">var</span> <span class="nv">increment</span> <span class="p">=</span> <span class="n">makeIncrementer</span><span class="p">()</span>
+<span class="linenos" data-linenos="8 "></span><span class="n">increment</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="structures">Structures</h2>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">struct</span> <span class="nc">Card</span> <span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="kd">var</span> <span class="nv">rank</span><span class="p">:</span> <span class="n">Rank</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="kd">var</span> <span class="nv">suit</span><span class="p">:</span> <span class="n">Suit</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="k">return</span> <span class="s">&quot;The %{rank.simpleDescription()} of %{suit.simpleDescription()}&quot;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="8 "></span><span class="kd">var</span> <span class="nv">threeOfSpades</span> <span class="p">=</span> <span class="n">Card</span><span class="p">(</span><span class="n">rank</span><span class="p">:</span> <span class="p">.</span><span class="n">three</span><span class="p">,</span> <span class="n">suit</span><span class="p">:</span> <span class="p">.</span><span class="n">spades</span><span class="p">)</span>
+<span class="linenos" data-linenos="9 "></span><span class="kd">var</span> <span class="nv">threeOfSpadesDescription</span> <span class="p">=</span> <span class="n">threeOfSpades</span><span class="p">.</span><span class="n">simpleDescription</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="objects-and-classes">Objects and Classes</h2>
+<p>Classes are like structures but have a constructor and a destructor.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">class</span> <span class="nc">NamedShape</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="kd">var</span> <span class="nv">numberOfSides</span><span class="p">:</span> <span class="n">int</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="kd">var</span> <span class="nv">mut</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">numberOfSides</span> <span class="p">=</span> <span class="n">numberOfSides</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">mut</span> <span class="kd">func</span> <span class="nf">setName</span><span class="p">(</span><span class="kc">_</span> <span class="n">name</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>    <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="n">const</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="k">return</span> <span class="s">&quot;A shape with %{numberOfSides} sides.&quot;</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="n">ns</span> <span class="p">=</span> <span class="n">NamedShape</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;square&quot;</span><span class="p">,</span> <span class="n">numberOfSides</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span><span class="kd">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">NamedShape</span> <span class="p">{</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="kd">var</span> <span class="nv">mut</span> <span class="n">sideLength</span><span class="p">:</span> <span class="n">double</span> <span class="p">{</span> <span class="kr">get</span> <span class="kr">set</span> <span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span>
+<span class="linenos" data-linenos="28 "></span>    <span class="kd">func</span> <span class="nf">__constructor__</span><span class="p">(</span><span class="n">sideLength</span><span class="p">:</span> <span class="n">double</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="29 "></span>        <span class="kc">self</span><span class="p">.</span><span class="n">sideLength</span> <span class="p">=</span> <span class="n">sideLength</span>
+<span class="linenos" data-linenos="30 "></span>        <span class="kc">super</span><span class="p">.</span><span class="n">__constructor__</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">&quot;square&quot;</span><span class="p">)</span>
+<span class="linenos" data-linenos="31 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="32 "></span>
+<span class="linenos" data-linenos="33 "></span>    <span class="kd">func</span> <span class="nf">area</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">double</span> <span class="p">{</span>
+<span class="linenos" data-linenos="34 "></span>        <span class="k">return</span> <span class="n">sideLength</span> <span class="o">*</span> <span class="n">sideLength</span>
+<span class="linenos" data-linenos="35 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="36 "></span>
+<span class="linenos" data-linenos="37 "></span>    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">simpleDescription</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+<span class="linenos" data-linenos="38 "></span>        <span class="k">return</span> <span class="s">&quot;A square with sides of length %{sideLength}.&quot;</span>
+<span class="linenos" data-linenos="39 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="40 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="41 "></span>
+<span class="linenos" data-linenos="42 "></span><span class="n">s</span> <span class="p">=</span> <span class="n">Square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos" data-linenos="43 "></span><span class="bp">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">area</span><span class="p">())</span>
+<span class="linenos" data-linenos="44 "></span><span class="c1">// Prints &quot;9&quot;</span>
+<span class="linenos" data-linenos="45 "></span><span class="n">s</span><span class="p">.</span><span class="n">setSideLength</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+<span class="linenos" data-linenos="46 "></span><span class="bp">print</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">area</span><span class="p">())</span>
+<span class="linenos" data-linenos="47 "></span><span class="c1">// Prints &quot;196&quot;</span>
+</code></pre></div>
+<h2 id="enumerations">Enumerations</h2>
+<h2 id="error-handling">Error Handling</h2>
+<h2 id="generics">Generics</h2>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MeuhLang Tools" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              MeuhLang Tools
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../reference/" class="md-footer__link md-footer__link--next" aria-label="Next: MeuhLang syntax" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              MeuhLang syntax
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright © 2019-2021 VERDOÏA Laurent <verdoialaurent@gmail.com>
+          </div>
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>

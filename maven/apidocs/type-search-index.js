@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"io.github.meuhlang.meuh.core","l":"DummyData.Builder"},{"p":"io.github.meuhlang.meuh.cli","l":"DummyCommand"},{"p":"io.github.meuhlang.meuh.core","l":"DummyData"},{"p":"io.github.meuhlang.meuh.cli","l":"EntryPoint"}]
