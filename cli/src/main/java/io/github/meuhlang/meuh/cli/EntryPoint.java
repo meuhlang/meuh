@@ -27,9 +27,6 @@ public class EntryPoint {
   }
 
   static CommandLine buildCommandLine() {
-    return new CommandLine(new EntryPoint())
-        .addSubcommand("dummy", new DummyCommand())
-        ;
+    return new CommandLine(new EntryPoint()).addSubcommand("dummy", new DummyCommand());
   }
-
 }
