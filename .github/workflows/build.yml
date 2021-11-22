@@ -7,7 +7,7 @@ jobs:
     name: Maven build
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.4.0
       - name: Set up JDK
         uses: actions/setup-java@v2.3.1
         with:
@@ -32,7 +32,7 @@ jobs:
     name: GraalVM Native Image
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.4.0
       - uses: ayltai/setup-graalvm@v1
         with:
           java-version: 11
@@ -89,7 +89,7 @@ jobs:
       - java-build-maven
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.4.0
       - uses: actions/download-artifact@v2.0.10
         with:
           name: website
