@@ -27,7 +27,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>The meuh programming language reference implementation.</description>
-    <url>https://meuhlang.github.io/</url>
+    <url>https://meuhlang.github.io/meuh/maven/</url>
     <inceptionYear>2021</inceptionYear>
 
     <licenses>
