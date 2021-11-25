@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"io.github.meuhlang.meuh.cli","c":"DummyCommandTest","l":"answerToLifeUniverseAndEverything()"},{"p":"io.github.meuhlang.meuh.cli","c":"DummyCommandTest","l":"DummyCommandTest()","url":"%3Cinit%3E()"},{"p":"io.github.meuhlang.meuh.cli","c":"DummyCommandTest","l":"noArgs()"}]

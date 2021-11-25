@@ -20,19 +20,19 @@ under the License.
 <rss version="0.91">
   <channel>
     <title>io.github.meuhlang.meuh:cli - Checkstyle report</title>
-    <link>https://meuhlang.github.io/cli/</link>
+    <link>https://meuhlang.github.io/meuh/maven/cli/</link>
     <description>io.github.meuhlang.meuh:cli - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2021</copyright>
     <item>
       <title>File: 3,
              Errors: 0,
-             Warnings: 4,
+             Warnings: 1,
              Infos: 0
       </title>
-            <link>https://meuhlang.github.io/cli//checkstyle.html</link>
+            <link>https://meuhlang.github.io/meuh/maven/cli//checkstyle.html</link>
       <description>
-        <p>Click <a href="https://meuhlang.github.io/cli//checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://meuhlang.github.io/cli//checkstyle.html#io.github.meuhlang.meuh.cli.DummyCommandTest.java">io/github/meuhlang/meuh/cli/DummyCommandTest.java</a>
+                  <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.DummyCommandTest.java">io/github/meuhlang/meuh/cli/DummyCommandTest.java</a>
                 </td>
                 <td>
                   0
@@ -60,13 +60,13 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://meuhlang.github.io/cli//checkstyle.html#io.github.meuhlang.meuh.cli.EntryPoint.java">io/github/meuhlang/meuh/cli/EntryPoint.java</a>
+                  <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.EntryPoint.java">io/github/meuhlang/meuh/cli/EntryPoint.java</a>
                 </td>
                 <td>
                   0
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -74,13 +74,13 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://meuhlang.github.io/cli//checkstyle.html#io.github.meuhlang.meuh.cli.DummyCommand.java">io/github/meuhlang/meuh/cli/DummyCommand.java</a>
+                  <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.DummyCommand.java">io/github/meuhlang/meuh/cli/DummyCommand.java</a>
                 </td>
                 <td>
                   0
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   0

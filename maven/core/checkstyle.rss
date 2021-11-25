@@ -20,19 +20,19 @@ under the License.
 <rss version="0.91">
   <channel>
     <title>io.github.meuhlang.meuh:core - Checkstyle report</title>
-    <link>https://meuhlang.github.io/core/</link>
+    <link>https://meuhlang.github.io/meuh/maven/core/</link>
     <description>io.github.meuhlang.meuh:core - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2021</copyright>
     <item>
       <title>File: 2,
              Errors: 0,
-             Warnings: 3,
+             Warnings: 1,
              Infos: 0
       </title>
-            <link>https://meuhlang.github.io/core//checkstyle.html</link>
+            <link>https://meuhlang.github.io/meuh/maven/core//checkstyle.html</link>
       <description>
-        <p>Click <a href="https://meuhlang.github.io/core//checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://meuhlang.github.io/meuh/maven/core//checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -46,13 +46,13 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://meuhlang.github.io/core//checkstyle.html#io.github.meuhlang.meuh.core.DummyData.java">io/github/meuhlang/meuh/core/DummyData.java</a>
+                  <a href="https://meuhlang.github.io/meuh/maven/core//checkstyle.html#io.github.meuhlang.meuh.core.DummyData.java">io/github/meuhlang/meuh/core/DummyData.java</a>
                 </td>
                 <td>
                   0
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -60,7 +60,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://meuhlang.github.io/core//checkstyle.html#io.github.meuhlang.meuh.core.DummyDataTest.java">io/github/meuhlang/meuh/core/DummyDataTest.java</a>
+                  <a href="https://meuhlang.github.io/meuh/maven/core//checkstyle.html#io.github.meuhlang.meuh.core.DummyDataTest.java">io/github/meuhlang/meuh/core/DummyDataTest.java</a>
                 </td>
                 <td>
                   0

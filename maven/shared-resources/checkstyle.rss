@@ -20,7 +20,7 @@ under the License.
 <rss version="0.91">
   <channel>
     <title>io.github.meuhlang.meuh:shared-resources - Checkstyle report</title>
-    <link>https://meuhlang.github.io/shared-resources/</link>
+    <link>https://meuhlang.github.io/meuh/maven/shared-resources/</link>
     <description>io.github.meuhlang.meuh:shared-resources - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2021</copyright>
@@ -30,9 +30,9 @@ under the License.
              Warnings: 0,
              Infos: 0
       </title>
-            <link>https://meuhlang.github.io/shared-resources//checkstyle.html</link>
+            <link>https://meuhlang.github.io/meuh/maven/shared-resources//checkstyle.html</link>
       <description>
-        <p>Click <a href="https://meuhlang.github.io/shared-resources//checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://meuhlang.github.io/meuh/maven/shared-resources//checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
