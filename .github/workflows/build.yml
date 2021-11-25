@@ -62,6 +62,7 @@ jobs:
         with:
           name: website
           path: site/site
+          retention-days: 1
 
   website-test:
     name: Test website
