@@ -4,7 +4,7 @@ clean:
 	mvn clean
 
 build-maven:
-	mvn clean verify
+	mvn verify
 
 shared-resources:
 	mvn --projects shared-resources install
