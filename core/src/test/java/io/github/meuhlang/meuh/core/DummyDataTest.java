@@ -15,12 +15,26 @@ package io.github.meuhlang.meuh.core;
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNull;
+
+import java.util.List;
 import org.testng.annotations.Test;
 
 public class DummyDataTest {
 
   @Test
+  public void testEmptyConstructor() {
+    final DummyData dd = new DummyData();
+    assertNull(dd.getData());
+  }
+
+  @Test
   public void testConstructor() {
-    new DummyData.Builder().build();
+    final DummyData dd = new DummyData();
+
+    final List<String> input = List.of("on", "two", "three");
+    dd.setData(input);
+    assertEquals(dd.getData(), input);
   }
 }

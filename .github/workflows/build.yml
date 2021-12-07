@@ -14,12 +14,10 @@ jobs:
           distribution: "temurin"
           java-version: "11.0.13+8"
           cache: "maven"
-      - name: Build with Maven
-        run: mvn --show-version clean verify
       - name: Install shared-resources
-        run: mvn --projects shared-resources install
-      - name: Build website
-        run: mvn site:site site:stage
+        run: mvn clean --projects shared-resources install
+      - name: Build with Maven
+        run: mvn clean verify site:site site:stage
       - name: Archive maven website
         uses: actions/upload-artifact@v2.2.4
         with:
@@ -27,6 +25,8 @@ jobs:
           path: target/staging
           if-no-files-found: error
           retention-days: 1
+      - name: Check shaded JAR
+        run: mvn clean package -Dmaven.test.skip=true
 
   java-build-native:
     name: GraalVM Native Image

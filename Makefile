@@ -4,13 +4,19 @@ clean:
 	mvn clean
 
 build-maven:
-	mvn clean verify
+	mvn verify
+
+build-shaded:
+	mvn package -Pshaded-jar
+
+build-native:
+	mvn package -Pgraalvm-native
 
 shared-resources:
 	mvn --projects shared-resources install
 
 site: shared-resources
-	mvn site:site site:stage
+	mvn package site:site site:stage
 
 mkdocs:
 	docker run \

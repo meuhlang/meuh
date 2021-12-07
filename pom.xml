@@ -77,14 +77,11 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- External dependencies version -->
-        <google-guava.version>31.0.1-jre</google-guava.version>
-        <freebuilder.version>2.7.0</freebuilder.version>
         <testng.version>7.4.0</testng.version>
-        <picocli.version>4.6.2</picocli.version>
         <system-lambda.version>1.2.0</system-lambda.version>
 
         <!-- Plugin versions -->
-        <checkstyle.version>9.1</checkstyle.version>
+        <checkstyle.version>9.2</checkstyle.version>
         <extra-enforcer-rules.version>1.4</extra-enforcer-rules.version>
         <findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
         <maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
@@ -107,8 +104,10 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
         <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-        <native-maven-plugin.version>0.9.7.1</native-maven-plugin.version>
-        <pmd.version>6.40.0</pmd.version>
+        <native-maven-plugin.version>0.9.8</native-maven-plugin.version>
+        <pmd.version>6.41.0</pmd.version>
+        <spotbugs-maven-plugin.version>4.5.0.0</spotbugs-maven-plugin.version>
+        <spotbugs.version>4.5.0</spotbugs.version>
         <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
     </properties>
 
@@ -127,22 +126,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
                 <artifactId>system-lambda</artifactId>
                 <version>${system-lambda.version}</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${google-guava.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>info.picocli</groupId>
-                <artifactId>picocli</artifactId>
-                <version>${picocli.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.inferred</groupId>
-                <artifactId>freebuilder</artifactId>
-                <version>${freebuilder.version}</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>org.testng</groupId>
@@ -171,6 +154,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven-checkstyle-plugin.version}</version>
                     <configuration>
+                        <linkXRef>false</linkXRef>
                         <configLocation>io/github/meuhlang/meuh/shared-resources/checkstyle/google_checks.xml</configLocation>
                         <headerLocation>io/github/meuhlang/meuh/shared-resources/checkstyle/header.txt</headerLocation>
                         <consoleOutput>true</consoleOutput>
@@ -331,6 +315,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
                     <artifactId>maven-pmd-plugin</artifactId>
                     <version>${maven-pmd-plugin.version}</version>
                     <configuration>
+                        <linkXRef>false</linkXRef>
                         <printFailingErrors>true</printFailingErrors>
                         <targetJdk>${maven.compiler.target}</targetJdk>
                         <excludeRoots>
@@ -447,29 +432,29 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
                     <artifactId>native-maven-plugin</artifactId>
                     <version>${native-maven-plugin.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>${spotbugs-maven-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.github.spotbugs</groupId>
+                            <artifactId>spotbugs</artifactId>
+                            <version>${spotbugs.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
             </plugins>
         </pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${findbugs-maven-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
@@ -477,21 +462,15 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
     <reporting>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <configuration>
+                    <xmlOutput>true</xmlOutput>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-                <reportSets>
-                    <reportSet>
-                        <id>default</id>
-                        <reports>
-                            <report>jxr-no-fork</report>
-                            <report>test-jxr-no-fork</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
+                <artifactId>maven-checkstyle-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -501,27 +480,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
                     <!-- Use link instead of include license home page -->
                     <linkOnly>true</linkOnly>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <reportSets>
-                    <reportSet>
-                        <id>aggregate</id>
-                        <inherited>false</inherited>
-                        <reports>
-                            <report>aggregate</report>
-                            <report>test-aggregate</report>
-                        </reports>
-                    </reportSet>
-                    <reportSet>
-                        <id>default</id>
-                        <reports>
-                            <report>javadoc</report>
-                            <report>test-javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -541,18 +499,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
                         <reports>
                             <report>pmd</report>
                             <report>cpd</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <reportSets>
-                    <reportSet>
-                        <id>default</id>
-                        <reports>
-                            <report>report-only</report>
                         </reports>
                     </reportSet>
                 </reportSets>

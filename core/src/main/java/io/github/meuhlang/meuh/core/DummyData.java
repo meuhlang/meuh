@@ -15,15 +15,34 @@ package io.github.meuhlang.meuh.core;
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import com.google.common.collect.ImmutableList;
-import org.inferred.freebuilder.FreeBuilder;
+import java.util.List;
 
-/** A simple dummy data. */
-@FreeBuilder
-public interface DummyData {
+public class DummyData {
 
-  ImmutableList<String> data();
+  private List<String> mData;
 
-  /** The famous builder. */
-  class Builder extends DummyData_Builder {}
+  public void setData(final List<String> data) {
+    if (data != null) {
+      mData = List.copyOf(data);
+    } else {
+      mData = null;
+    }
+  }
+
+  public List<String> getData() {
+    if (mData != null) {
+      return List.copyOf(mData);
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public String toString() {
+    return new StringBuilder("DummyData{data=")
+        .append(mData)
+        .append('}')
+        .toString();
+  }
+
 }

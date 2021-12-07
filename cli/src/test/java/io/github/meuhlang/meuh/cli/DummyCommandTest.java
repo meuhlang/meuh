@@ -31,11 +31,11 @@ public class DummyCommandTest {
         tapSystemOutNormalized(
             () -> {
               final String errText =
-                  tapSystemErr(() -> EntryPoint.buildCommandLine().execute("dummy"));
+                  tapSystemErr(() -> new DummyCommand().run(new String[]{}));
               assertTrue(Strings.isNullOrEmpty(errText));
             });
 
-    assertEquals(outText, "DummyData{data=[]}\n");
+    assertEquals(outText, "DummyData{data=null}\n");
   }
 
   @Test
@@ -44,7 +44,7 @@ public class DummyCommandTest {
         tapSystemOutNormalized(
             () -> {
               final String errText =
-                  tapSystemErr(() -> EntryPoint.buildCommandLine().execute("dummy", "42"));
+                  tapSystemErr(() -> new DummyCommand().run(new String[]{"42"}));
               assertTrue(Strings.isNullOrEmpty(errText));
             });
 

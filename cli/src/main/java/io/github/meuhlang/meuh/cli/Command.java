@@ -15,21 +15,8 @@ package io.github.meuhlang.meuh.cli;
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import io.github.meuhlang.meuh.core.DummyData;
-import java.util.List;
+public interface Command {
 
-/** The entry point of the dummy command. */
-public class DummyCommand implements Command {
-
-  public int run(final String[] args) {
-    final DummyData dd = new DummyData();
-    if (args.length > 0) {
-      dd.setData(List.of(args));
-    }
-
-    System.out.println(dd);
-
-    return 0;
-  }
+  int run(final String[] args);
 
 }

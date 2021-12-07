@@ -15,24 +15,39 @@ package io.github.meuhlang.meuh.cli;
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import picocli.CommandLine;
+import static java.util.Map.entry;
 
-/** The entry point of the meuh command. */
-@CommandLine.Command(name = "meuh")
+import java.util.Arrays;
+import java.util.Map;
+
+/** The entry point of the dummy command. */
 public class EntryPoint {
 
+  private static final Map<String, CommandBuilder> COMMANDS;
+
+  static {
+    COMMANDS = Map.ofEntries(entry("dummy", DummyCommand::new));
+  }
+
   /**
-   * Entry point of the meuh command.
+   * Entry point of the dummy command.
    *
    * @param args command line arguments
    */
   public static void main(final String... args) {
-    final var cmd = buildCommandLine();
-    final int exitCode = cmd.execute(args);
-    System.exit(exitCode);
+    if (args.length < 1) {
+      throw new RuntimeException("No command given !");
+    }
+
+    final String commandName = args[0];
+    final var commandBuilder = COMMANDS.get(commandName.toLowerCase());
+    if (commandBuilder == null) {
+      throw new RuntimeException("Unknown command: " + commandName);
+    }
+
+    final var commandArgs = Arrays.copyOfRange(args, 1, args.length);
+    final int returnCode = commandBuilder.build().run(commandArgs);
+    System.exit(returnCode);
   }
 
-  static CommandLine buildCommandLine() {
-    return new CommandLine(new EntryPoint()).addSubcommand("dummy", new DummyCommand());
-  }
 }
