@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"io.github.meuhlang.meuh.core","c":"DummyDataTest","l":"DummyDataTest()","url":"%3Cinit%3E()"},{"p":"io.github.meuhlang.meuh.core","c":"DummyDataTest","l":"testConstructor()"}]

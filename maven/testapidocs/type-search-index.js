@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"io.github.meuhlang.meuh.cli","l":"DummyCommandTest"},{"p":"io.github.meuhlang.meuh.core","l":"DummyDataTest"}]
