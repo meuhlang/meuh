@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: website-build
     steps:
-      - uses: actions/download-artifact@v2.0.10
+      - uses: actions/download-artifact@v2.1.0
         with:
           name: website
           path: meuh
@@ -91,13 +91,13 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/download-artifact@v2.0.10
+      - uses: actions/download-artifact@v2.1.0
         with:
           name: website
           path: website
       - name: Delete the maven place holder.
         run: rm -rv website/maven
-      - uses: actions/download-artifact@v2.0.10
+      - uses: actions/download-artifact@v2.1.0
         with:
           name: maven-website
           path: website/maven
