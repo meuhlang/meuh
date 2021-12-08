@@ -46,20 +46,6 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.DummyCommandTest.java">io/github/meuhlang/meuh/cli/DummyCommandTest.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.Command.java">io/github/meuhlang/meuh/cli/Command.java</a>
                 </td>
                 <td>
@@ -102,7 +88,21 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.DummyCommand.java">io/github/meuhlang/meuh/cli/DummyCommand.java</a>
+                  <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.cmd.dummy.DummyCommand.java">io/github/meuhlang/meuh/cli/cmd/dummy/DummyCommand.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://meuhlang.github.io/meuh/maven/cli//checkstyle.html#io.github.meuhlang.meuh.cli.cmd.dummy.DummyCommandTest.java">io/github/meuhlang/meuh/cli/cmd/dummy/DummyCommandTest.java</a>
                 </td>
                 <td>
                   0
