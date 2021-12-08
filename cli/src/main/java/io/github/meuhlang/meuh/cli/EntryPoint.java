@@ -17,10 +17,10 @@ package io.github.meuhlang.meuh.cli;
 
 import static java.util.Map.entry;
 
+import io.github.meuhlang.meuh.cli.cmd.dummy.DummyCommand;
 import java.util.Arrays;
 import java.util.Map;
 
-/** The entry point of the dummy command. */
 public class EntryPoint {
 
   private static final Map<String, CommandBuilder> COMMANDS;
@@ -29,11 +29,6 @@ public class EntryPoint {
     COMMANDS = Map.ofEntries(entry("dummy", DummyCommand::new));
   }
 
-  /**
-   * Entry point of the dummy command.
-   *
-   * @param args command line arguments
-   */
   public static void main(final String... args) {
     if (args.length < 1) {
       throw new RuntimeException("No command given !");

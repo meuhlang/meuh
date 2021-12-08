@@ -1,4 +1,4 @@
-package io.github.meuhlang.meuh.cli;
+package io.github.meuhlang.meuh.cli.cmd.dummy;
 
 /*
  * This program is free software: you can redistribute it and/or modify
@@ -15,10 +15,10 @@ package io.github.meuhlang.meuh.cli;
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import io.github.meuhlang.meuh.cli.Command;
 import io.github.meuhlang.meuh.core.DummyData;
 import java.util.List;
 
-/** The entry point of the dummy command. */
 public class DummyCommand implements Command {
 
   public int run(final String[] args) {

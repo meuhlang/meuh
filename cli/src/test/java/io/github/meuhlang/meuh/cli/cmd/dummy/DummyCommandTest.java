@@ -1,4 +1,4 @@
-package io.github.meuhlang.meuh.cli;
+package io.github.meuhlang.meuh.cli.cmd.dummy;
 
 /*
  * This program is free software: you can redistribute it and/or modify
