@@ -19,7 +19,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean verify site:site site:stage
       - name: Archive maven website
-        uses: actions/upload-artifact@v2.3.0
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: maven-website
           path: target/staging
@@ -41,7 +41,7 @@ jobs:
       - name: Build with Maven
         run: mvn --show-version clean package -Pgraalvm-native
       - name: Archive production artifacts
-        uses: actions/upload-artifact@v2.3.0
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: GraalVM Native Image
           path: cli/target/meuh
@@ -58,7 +58,7 @@ jobs:
         with:
           strict: true
           configfile: ./site/mkdocs.yml
-      - uses: actions/upload-artifact@v2.3.0
+      - uses: actions/upload-artifact@v2.3.1
         with:
           name: website
           path: site/site
