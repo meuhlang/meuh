@@ -81,7 +81,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
         <system-lambda.version>1.2.0</system-lambda.version>
 
         <!-- Plugin versions -->
-        <checkstyle.version>9.2</checkstyle.version>
+        <checkstyle.version>9.2.1</checkstyle.version>
         <extra-enforcer-rules.version>1.5.1</extra-enforcer-rules.version>
         <findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
         <maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
