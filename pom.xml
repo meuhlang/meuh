@@ -78,7 +78,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
         <!-- External dependencies version -->
         <testng.version>7.5</testng.version>
-        <system-lambda.version>1.2.0</system-lambda.version>
+        <system-lambda.version>1.2.1</system-lambda.version>
 
         <!-- Plugin versions -->
         <checkstyle.version>9.2</checkstyle.version>
