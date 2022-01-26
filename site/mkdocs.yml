@@ -1,3 +1,5 @@
+---
+
 site_name: MeuhLang
 site_url: https://meuhlang.github.io/meuh/
 site_description: The meuh programming language
@@ -39,33 +41,33 @@ nav:
       - about/open-source.md
       - 'License': about/license.md
   - 'Getting Started':
-    - started/index.md
+      - started/index.md
     # - started/installing.md
     # - started/packages.md
     # - started/debugging.md
   - 'Tools':
-    - tools/index.md
+      - tools/index.md
     # - tools/build.md
     # - tools/run.md
     # - tools/package.md
     # - tools/fmt.md
   - 'Programming Guide':
-    - guide/index.md
+      - guide/index.md
     # - guide/basics.md
     # - guide/strings.md
     # - guide/control-flow.md
     # - guide/...
   - 'Reference':
-    - reference/index.md
+      - reference/index.md
     # - reference/lexical-structure.md
     # - reference/types.md
     # - reference/class.md
     # - reference/lambda.md
     # - reference/...
   - 'Standard Library':
-    - stdlib/index.md
+      - stdlib/index.md
   - 'Community':
-    - community/index.md
+      - community/index.md
     # - community/contributing.md
     # - community/governance.md
   - Maven: maven/index.html
