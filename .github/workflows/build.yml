@@ -6,6 +6,7 @@ on: push
 
 jobs:
   go-lint:
+    name: Go linting
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2.4.0
@@ -20,6 +21,7 @@ jobs:
           skip-go-installation: true
 
   go-build:
+    name: Build & Test Go
     runs-on: ubuntu-20.04
     needs: go-lint
     steps:
@@ -50,47 +52,37 @@ jobs:
   website-build:
     name: Build website
     runs-on: ubuntu-20.04
-    needs: go-build
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/download-artifact@v2.1.0
-        with:
-          name: go-coverage
-          path: site/docs/go
       - name: Build
         uses: meuhlang/mkdocs-docker@v1.2.3-3
         with:
           strict: true
           configfile: ./site/mkdocs.yml
+      - name: Prepare folders for html-proofer
+        run: |
+          mkdir website
+          ln -sv ../site/site website/meuh
+      - name: Run html-proofer
+        uses: meuhlang/html-proofer-docker@v3.19.2-0
+        with:
+          path: website
+          allow_hash_href: 'true'
+          enforce_https: 'true'
+          url_ignore: '/fonts.gstatic.com/'
+          internal_domains: meuhlang.github.io
       - uses: actions/upload-artifact@v2.3.1
         with:
           name: website
           path: site/site
           retention-days: 1
 
-  website-test:
-    name: Test website
-    runs-on: ubuntu-20.04
-    needs: website-build
-    steps:
-      - uses: actions/download-artifact@v2.1.0
-        with:
-          name: website
-          path: meuh
-      - name: Run html-proofer
-        uses: meuhlang/html-proofer-docker@v3.19.2-0
-        with:
-          allow_hash_href: 'true'
-          enforce_https: 'true'
-          url_ignore: '/fonts.gstatic.com/'
-          internal_domains: meuhlang.github.io
-
   website-deploy:
     name: Deploy website
     runs-on: ubuntu-20.04
     needs:
       - website-build
-      - website-test
+      - go-build
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v2.4.0
@@ -98,12 +90,10 @@ jobs:
         with:
           name: website
           path: website
-      - name: Delete the maven place holder.
-        run: rm -rv website/maven
       - uses: actions/download-artifact@v2.1.0
         with:
-          name: maven-website
-          path: website/maven
+          name: go-coverage
+          path: website/go
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
