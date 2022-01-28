@@ -1,22 +1,18 @@
-all: build-maven
+all: test build
 
 clean:
 	mvn clean
 
-build-maven:
-	mvn verify
+build:
+	go build .
 
-build-shaded:
-	mvn package -Pshaded-jar
-
-build-native:
-	mvn package -Pgraalvm-native
-
-shared-resources:
-	mvn --projects shared-resources install
-
-site: shared-resources
-	mvn package site:site site:stage
+test:
+	go test \
+		-coverpkg=github.com/meuhlang/meuh/... \
+		-coverprofile=coverage.out \
+		./...
+	go tool cover -func=coverage.out
+	go tool cover -html=coverage.out -o coverage.html
 
 mkdocs:
 	docker run \
@@ -47,4 +43,4 @@ mkdocs-validate: mkdocs-build
     	--enforce-https \
     	--url-ignore '/fonts.gstatic.com/'
 
-.PHONY: all build-maven clean shared-resources site-run site-validate site
+.PHONY: all clean build test mkdocs mkdocs-build mkdocs-validate

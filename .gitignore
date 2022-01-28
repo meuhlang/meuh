@@ -19,6 +19,12 @@
 # Super-Linter log file
 /super-linter.log
 
+# Go coverage report
+/coverage.html
+
+# Go binary
+/meuh
+
 ### Copied from https://github.com/github/gitignore/blob/main/Go.gitignore
 ### At 29f57d101007d7cdece5ff14f11fad7a176ea802
 # If you prefer the allow list template instead of the deny list, see community template:
