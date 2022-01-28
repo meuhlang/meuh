@@ -10,7 +10,6 @@ docker run \
   --env RUN_LOCAL=true \
   --env VALIDATE_CSS=false \
   --env VALIDATE_GO=false \
-  --env VALIDATE_JAVA=false \
   --env VALIDATE_JAVASCRIPT_ES=false \
   --env VALIDATE_JAVASCRIPT_STANDARD=false \
   --mount "type=bind,src=${PWD},dst=/tmp/lint" \
