@@ -1,8 +1,5 @@
 all: test build
 
-clean:
-	mvn clean
-
 build:
 	go build .
 
@@ -43,4 +40,4 @@ mkdocs-validate: mkdocs-build
     	--enforce-https \
     	--url-ignore '/fonts.gstatic.com/'
 
-.PHONY: all clean build test mkdocs mkdocs-build mkdocs-validate
+.PHONY: all build test mkdocs mkdocs-build mkdocs-validate
