@@ -5,56 +5,58 @@ name: Build
 on: push
 
 jobs:
-  java-build-maven:
-    name: Maven build
+  go-lint:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2.4.0
-      - name: Set up JDK
-        uses: actions/setup-java@v2.5.0
+      - name: Set up Go
+        uses: actions/setup-go@v2.1.5
         with:
-          distribution: "temurin"
-          java-version: "11.0.13+8"
-          cache: "maven"
-      - name: Install shared-resources
-        run: mvn clean --projects shared-resources install
-      - name: Build with Maven
-        run: mvn clean verify site:site site:stage
-      - name: Archive maven website
-        uses: actions/upload-artifact@v2.3.1
+          go-version: 1.17
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2.5.2
         with:
-          name: maven-website
-          path: target/staging
-          if-no-files-found: error
-          retention-days: 1
-      - name: Check shaded JAR
-        run: mvn clean package -Dmaven.test.skip=true
+          version: v1.44.0
+          skip-go-installation: true
 
-  java-build-native:
-    name: GraalVM Native Image
+  go-build:
     runs-on: ubuntu-20.04
+    needs: go-lint
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: ayltai/setup-graalvm@v1
+      - name: Set up Go
+        uses: actions/setup-go@v2.1.5
         with:
-          java-version: 11
-          graalvm-version: 21.3.0
-          native-image: true
-      - name: Build with Maven
-        run: mvn --show-version clean package -Pgraalvm-native
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v2.3.1
+          go-version: 1.17
+      - name: Build
+        run: go build -v ./...
+      - name: Test
+        run: >
+          go test
+          -coverpkg=github.com/meuhlang/meuh/...
+          -coverprofile=coverage.out
+          ./...
+      - name: Report
+        run: |
+          go tool cover -func=coverage.out
+          go tool cover -html=coverage.out -o coverage.html
+      - uses: actions/upload-artifact@v2.3.1
         with:
-          name: GraalVM Native Image
-          path: cli/target/meuh
-          if-no-files-found: error
+          name: go-coverage
+          path: coverage.html
           retention-days: 1
+          if-no-files-found: error
 
   website-build:
     name: Build website
     runs-on: ubuntu-20.04
+    needs: go-build
     steps:
       - uses: actions/checkout@v2.4.0
+      - uses: actions/download-artifact@v2.1.0
+        with:
+          name: go-coverage
+          path: site/docs/go
       - name: Build
         uses: meuhlang/mkdocs-docker@v1.2.3-3
         with:
@@ -89,7 +91,6 @@ jobs:
     needs:
       - website-build
       - website-test
-      - java-build-maven
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v2.4.0

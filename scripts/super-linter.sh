@@ -9,6 +9,7 @@ docker run \
   --env FILTER_REGEX_EXCLUDE=site/docs/about/license.md \
   --env RUN_LOCAL=true \
   --env VALIDATE_CSS=false \
+  --env VALIDATE_GO=false \
   --env VALIDATE_JAVA=false \
   --env VALIDATE_JAVASCRIPT_ES=false \
   --env VALIDATE_JAVASCRIPT_STANDARD=false \
