@@ -13,4 +13,4 @@ docker run \
   --env VALIDATE_JAVASCRIPT_ES=false \
   --env VALIDATE_JAVASCRIPT_STANDARD=false \
   --mount "type=bind,src=${PWD},dst=/tmp/lint" \
-  github/super-linter:v4.8.7 "$@"
+  github/super-linter:v4.9.0 "$@"
