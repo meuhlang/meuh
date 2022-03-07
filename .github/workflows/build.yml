@@ -42,7 +42,7 @@ jobs:
         run: |
           go tool cover -func=coverage.out
           go tool cover -html=coverage.out -o coverage.html
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.0.0
         with:
           name: go-coverage
           path: coverage.html
@@ -71,7 +71,7 @@ jobs:
           enforce_https: 'true'
           url_ignore: '/fonts.gstatic.com/'
           internal_domains: meuhlang.github.io
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.0.0
         with:
           name: website
           path: site/site
