@@ -5,50 +5,6 @@ name: Build
 on: push
 
 jobs:
-  go-lint:
-    name: Go linting
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3.0.0
-      - name: Set up Go
-        uses: actions/setup-go@v3.0.0
-        with:
-          go-version: 1.17
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3.1.0
-        with:
-          version: v1.44.0
-          skip-go-installation: true
-
-  go-build:
-    name: Build & Test Go
-    runs-on: ubuntu-20.04
-    needs: go-lint
-    steps:
-      - uses: actions/checkout@v3.0.0
-      - name: Set up Go
-        uses: actions/setup-go@v3.0.0
-        with:
-          go-version: 1.17
-      - name: Build
-        run: go build -v ./...
-      - name: Test
-        run: >
-          go test
-          -coverpkg=github.com/meuhlang/meuh/...
-          -coverprofile=coverage.out
-          ./...
-      - name: Report
-        run: |
-          go tool cover -func=coverage.out
-          go tool cover -html=coverage.out -o coverage.html
-      - uses: actions/upload-artifact@v3.0.0
-        with:
-          name: go-coverage
-          path: coverage.html
-          retention-days: 1
-          if-no-files-found: error
-
   website-build:
     name: Build website
     runs-on: ubuntu-20.04
@@ -82,7 +38,6 @@ jobs:
     runs-on: ubuntu-20.04
     needs:
       - website-build
-      - go-build
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v3.0.0
@@ -90,10 +45,6 @@ jobs:
         with:
           name: website
           path: website
-      - uses: actions/download-artifact@v3.0.0
-        with:
-          name: go-coverage
-          path: website/go
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
