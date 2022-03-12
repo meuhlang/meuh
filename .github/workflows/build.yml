@@ -19,7 +19,7 @@ jobs:
       - name: Build with Maven
         run: mvn clean verify site:site site:stage
       - name: Archive maven website
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.0.0
         with:
           name: maven-website
           path: target/staging
@@ -50,7 +50,7 @@ jobs:
           enforce_https: 'true'
           url_ignore: '/fonts.gstatic.com/'
           internal_domains: meuhlang.github.io
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3.0.0
         with:
           name: website
           path: site/site
