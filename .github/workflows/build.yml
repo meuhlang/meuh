@@ -54,6 +54,7 @@ jobs:
         with:
           name: website
           path: site/site
+          if-no-files-found: error
           retention-days: 1
 
   website-deploy:
