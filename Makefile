@@ -1,15 +1,15 @@
-all: test build
+all: java-build
 
-build:
-	go build .
+clean: java-clean
 
-test:
-	go test \
-		-coverpkg=github.com/meuhlang/meuh/... \
-		-coverprofile=coverage.out \
-		./...
-	go tool cover -func=coverage.out
-	go tool cover -html=coverage.out -o coverage.html
+java-clean:
+	mvn clean
+
+java-build:
+	mvn verify
+
+java-site:
+	mvn package site:site site:stage
 
 mkdocs:
 	docker run \
@@ -40,4 +40,4 @@ mkdocs-validate: mkdocs-build
     	--enforce-https \
     	--url-ignore '/fonts.gstatic.com/'
 
-.PHONY: all build test mkdocs mkdocs-build mkdocs-validate
+.PHONY: all clean java-clean java-build java-site test mkdocs mkdocs-build mkdocs-validate
