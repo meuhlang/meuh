@@ -15,7 +15,12 @@ package io.github.meuhlang.meuh.cli;
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-public class EntryPoint {
+public final class EntryPoint {
+
+    private EntryPoint() {
+        throw new UnsupportedOperationException();
+    }
+
     public static void main(final String[] args) {
         System.out.println("Hello, world !");
     }
