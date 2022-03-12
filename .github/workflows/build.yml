@@ -9,7 +9,7 @@ jobs:
     name: Maven build
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.0.0
       - name: Set up JDK
         uses: actions/setup-java@v2.5.0
         with:
@@ -32,7 +32,7 @@ jobs:
     name: Build website
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.0.0
       - name: Build
         uses: meuhlang/mkdocs-docker@v1.2.3-3
         with:
@@ -65,7 +65,7 @@ jobs:
       - website-build
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.0.0
       - uses: actions/download-artifact@v3.0.0
         with:
           name: website
