@@ -5,49 +5,28 @@ name: Build
 on: push
 
 jobs:
-  go-lint:
-    name: Go linting
+  java-build:
+    name: Maven build
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3.0.0
-      - name: Set up Go
-        uses: actions/setup-go@v3.0.0
+      - uses: actions/checkout@v2.4.0
+      - name: Set up JDK
+        uses: actions/setup-java@v2.5.0
         with:
-          go-version: 1.17
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3.1.0
+          distribution: "temurin"
+          java-version: "17.0.2+8"
+          cache: "maven"
+      - name: Build with Maven
+        run: mvn clean verify site:site site:stage
+      - name: Archive maven website
+        uses: actions/upload-artifact@v2.3.1
         with:
-          version: v1.44.0
-          skip-go-installation: true
-
-  go-build:
-    name: Build & Test Go
-    runs-on: ubuntu-20.04
-    needs: go-lint
-    steps:
-      - uses: actions/checkout@v3.0.0
-      - name: Set up Go
-        uses: actions/setup-go@v3.0.0
-        with:
-          go-version: 1.17
-      - name: Build
-        run: go build -v ./...
-      - name: Test
-        run: >
-          go test
-          -coverpkg=github.com/meuhlang/meuh/...
-          -coverprofile=coverage.out
-          ./...
-      - name: Report
-        run: |
-          go tool cover -func=coverage.out
-          go tool cover -html=coverage.out -o coverage.html
-      - uses: actions/upload-artifact@v3.0.0
-        with:
-          name: go-coverage
-          path: coverage.html
-          retention-days: 1
+          name: maven-website
+          path: target/staging
           if-no-files-found: error
+          retention-days: 1
+      - name: Check shaded JAR
+        run: mvn clean package -Dmaven.test.skip=true
 
   website-build:
     name: Build website
@@ -81,8 +60,8 @@ jobs:
     name: Deploy website
     runs-on: ubuntu-20.04
     needs:
+      - java-build
       - website-build
-      - go-build
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v3.0.0
@@ -92,8 +71,8 @@ jobs:
           path: website
       - uses: actions/download-artifact@v3.0.0
         with:
-          name: go-coverage
-          path: website/go
+          name: maven-website
+          path: website/maven
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
