@@ -69,8 +69,9 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- External dependencies version -->
+        <freebuilder.version>2.7.0</freebuilder.version>
+        <guava.version>31.1-jre</guava.version>
         <testng.version>7.5</testng.version>
-        <system-lambda.version>1.2.1</system-lambda.version>
 
         <!-- Plugin versions -->
         <checkstyle.version>10.0</checkstyle.version>
@@ -104,15 +105,20 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
     <dependencies>
         <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.inferred</groupId>
+            <artifactId>freebuilder</artifactId>
+            <version>${freebuilder.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.stefanbirkner</groupId>
-            <artifactId>system-lambda</artifactId>
-            <version>${system-lambda.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -247,6 +253,16 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
                     <showWarnings>true</showWarnings>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
+                    <annotationProcessors>
+                        <annotationProcessor>org.inferred.freebuilder.processor.Processor</annotationProcessor>
+                    </annotationProcessors>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.inferred</groupId>
+                            <artifactId>freebuilder</artifactId>
+                            <version>${freebuilder.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <plugin>

@@ -1,4 +1,4 @@
-package io.github.meuhlang.meuh.cli;
+package io.github.meuhlang.meuh.utils.fa;
 
 /*
  * This program is free software: you can redistribute it and/or modify
@@ -15,13 +15,22 @@ package io.github.meuhlang.meuh.cli;
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-public final class EntryPoint {
+import java.util.UUID;
+import org.inferred.freebuilder.FreeBuilder;
+import org.inferred.freebuilder.IgnoredByEquals;
 
-  private EntryPoint() {
-    throw new UnsupportedOperationException();
-  }
+@FreeBuilder
+public interface Node {
 
-  public static void main(final String[] args) {
-    System.out.println("Hello, world !");
+  UUID id();
+
+  @IgnoredByEquals
+  boolean isTerminal();
+
+  class Builder extends Node_Builder {
+    public Builder() {
+      id(UUID.randomUUID());
+      isTerminal(false);
+    }
   }
 }
